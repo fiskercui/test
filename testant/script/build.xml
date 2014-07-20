@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<project name="projectStudy" default="sayBaseDir" basedir="./testAnt">
+	<target name="sayBaseDir" description="print message">
+		<echo message="ant hello world in dir ${basedir}"/>
+	</target>
+
+	<target name="makeDir" description="mkDir">
+		<mkdir dir="mkdirtest"/>
+	</target>
+
+	<target name="deleteDir" description="delDir">
+		<delete dir = "mkdirtest"/>
+	</target>
+
+
+	 <target name="copyfile" description="拷贝文件">
+        <copy file="antStudy.txt" tofile="copy.txt"/>
+    </target>     
+    <target name="copydir" description="拷贝目录">
+        <copy todir="mkdirtest_copy">
+              <fileset dir="mkdirtest"/>
+         </copy>
+    </target>
+
+	<target name="delBakAndEmpty" description="删除空目录及备份目录">
+        <delete includeEmptyDirs="true">
+            <fileset dir="." includes="**/*.bak" />
+        </delete>
+    </target>
+
+
+    <property name="propertyName1" value="testProperty1"/>
+    <property name="propertyName2" value="testProperty2"/>
+    <target name="testProperty" description="testProperty test">
+    	<echo message="print testProperty ------------:${propertyName1}, ${propertyName2}"/>
+    </target>
+
+
+    <target name="condition_os">
+    	<condition property="system.type" value="win32">
+    		<os family="mac"/>
+    	</condition>
+    	<property name="somep" value="123"/>
+    	<condition property="pname" value="hello world">
+			<isset property="somep"/>
+		</condition>
+		<echo message="pname is ${pname}"/>
+	</target>
+
+	<target name="condition_istrue">  
+		<condition property="condition_1">  
+            <istrue value="false"/>  
+        </condition>  
+        <antcall target="isTrue1"/>  
+        <antcall target="isFalse1"/>  
+    </target>  
+    <target name="isTrue1" if="condition_1">  
+        <echo>is true hehe </echo>  
+    </target>  
+    <target name="isFalse1" unless="condition_1">  
+        <echo>is false</echo>  
+    </target>  
+ </project>
