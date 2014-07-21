@@ -1,7 +1,8 @@
 
 local tests = {
 	-- "testdebug",
-	"testmetatable",
+	-- "testmetatable",
+	"testserialize",
 	-- "testenv",
 	-- "testtable"
 }
