@@ -2,9 +2,10 @@
 local tests = {
 	-- "testdebug",
 	-- "testmetatable",
-	"testserialize",
+	-- "testserialize",
 	-- "testenv",
 	-- "testtable"
+	"testfunction"
 }
 
 print(table.maxn(tests))
