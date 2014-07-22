@@ -430,8 +430,29 @@ end
 
 
 function ByteArray:test(...)
-	local __pack = string.pack("<bihP2", 0x59, 11, 1101, "", "中文")
+	
+-- z : zero-terminated string 
+-- p : string preceded by length byte 
+-- P : string preceded by length word 
+-- a : string preceded by length size_t 
+-- A : string 
+-- f : float 
+-- d : double 
+-- n : Lua number 
+-- c : char 
+-- b : byte (unsigned char) 
+-- h : short 
+-- H : unsigned short 
+-- i : int 
+-- I : unsigned int 
+-- l : long 
+-- L : unsigned long
 
+-- < : little endian 
+-- > : big endian 
+-- = : native endian	
+	local __pack = string.pack("<bihP2", 0x59, 11, 1101, "", "中文")
+	local __pack = string.pack("", 0x59, 11, 1101, "", "中文")
 	-- create a ByteArray
 	local __ba = ByteArray.new()
 
@@ -442,6 +463,8 @@ function ByteArray:test(...)
 	__ba:setPos(1)
 
 	-- now, you can read it like actionscript
+	print("ba.toString(16):", __ba:toString(16))
+
 	print("ba.len:", __ba:getLen())
 	print("ba.readByte:", __ba:readByte())
 	print("ba.readInt:", __ba:readInt())
@@ -465,6 +488,7 @@ function ByteArray:test(...)
 	__ba2:writeStringUShort("中文")
 
 	-- dump it
+	print("ba2.toString(16):", __ba2:toString(16))
 	print("ba2.toString(10):", __ba2:toString(10))
 end
 

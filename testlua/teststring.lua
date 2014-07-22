@@ -3,6 +3,26 @@ require('pack')
 
 local t =  {}
 
+-- z : zero-terminated string 
+-- p : string preceded by length byte 
+-- P : string preceded by length word 
+-- a : string preceded by length size_t 
+-- A : string 
+-- f : float 
+-- d : double 
+-- n : Lua number 
+-- c : char 
+-- b : byte (unsigned char) 
+-- h : short 
+-- H : unsigned short 
+-- i : int 
+-- I : unsigned int 
+-- l : long 
+-- L : unsigned long
+
+-- < : little endian 
+-- > : big endian 
+-- = : native endian
 function t:test( ... )
 	print("string test")
 	local __s = "123"

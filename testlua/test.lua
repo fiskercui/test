@@ -1,15 +1,17 @@
 
+require('base.class')
+-- require('pack')
+
 local tests = {
 	-- "testdebug",
 	-- "testmetatable",
 	-- "testserialize",
 	-- "testenv",
-	-- "testtable"
-	"testfunction"
+	-- "testtable",
+	-- "testfunction",
+	-- "teststring",
+	"testbytearray"
 }
-
-print(table.maxn(tests))
-print(#tests)
 
 function  startAllTests()
 	print("-----------initAllTests")
