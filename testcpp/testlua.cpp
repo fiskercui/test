@@ -72,9 +72,18 @@ void testLua()
 void testTable()
 {
   char* szLua_code =
-    "x = {} --用户存放结果的table"
-    "x[1], x[2] = string.gsub(c.Str, c.Mode, c.Tag)   --x[1]里是结果 x[2]是替换次数"
-    "x.u = string.upper(x[1])";
+    "x = {}"
+    "x[1], x[2] = string.gsub(c.Str, c.Mode, c.Tag)"
+    "print(c.Str, c.Mode, c.Tag)"
+    "x.u = string.upper(x[1])"
+    ;
+  // 一下结果为非法，加注释后似乎有问题
+  // char* szLua_code =
+  //   "x = {}  --结果集合"
+  //   "x[1], x[2] = string.gsub(c.Str, c.Mode, c.Tag)"
+  //   "print(c.Str, c.Mode, c.Tag)"
+  //   "x.u = string.upper(x[1])"
+  //   ;
 
   const char* szMode = "(%w+)%s*=%s*(%w+)";
   const char* szStr = "key1 = value1 key2 = value2";
@@ -96,7 +105,7 @@ void testTable()
 // This function pops both the key and the value from the stack. As in Lua, this function may trigger a metamethod for the "newindex" event (see §2.8).
 
   lua_pushstring(L, "Tag");
-  lua_pushstring(L, szStr);
+  lua_pushstring(L, szTag);
   lua_settable(L, -3);
 
   lua_pushstring(L, "Str");
@@ -122,7 +131,7 @@ void testTable()
       lua_pop(L, 1);
 
 
-      for(int i = 1; i<2; i++)
+      for(int i = 1; i<=2; i++)
       {
         lua_pushnumber(L, i );
         lua_gettable(L, -2);
