@@ -35,6 +35,11 @@ function t:test(...)
 	print("MyWin", MyWin.x, MyWin.y, MyWin.width, MyWin.height, MyWin.title)
 
 	t.testIndex()
+
+	local __mt = getmetatable(MyWin)
+	for key,value in pairs( __mt.__index) do
+		print("index", key, value)
+	end
 end
 
 

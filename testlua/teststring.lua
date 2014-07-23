@@ -3,6 +3,24 @@ require('pack')
 
 local t =  {}
 
+local sprite_fs = [[
+varying vec2 v_texcoord;
+varying vec4 v_color;
+uniform sampler2D texture0;
+uniform vec3 additive;
+
+void main() {
+	vec4 tmp = texture2D(texture0, v_texcoord);
+	gl_FragColor.xyz = tmp.xyz * v_color.xyz;
+	gl_FragColor.w = tmp.w;
+	gl_FragColor *= v_color.w;
+	gl_FragColor.xyz += additive.xyz * tmp.w;
+}
+]]
+
+local node_fs =[[
+abc=123
+]]
 -- z : zero-terminated string 
 -- p : string preceded by length byte 
 -- P : string preceded by length word 
@@ -25,6 +43,10 @@ local t =  {}
 -- = : native endian
 function t:test( ... )
 	print("string test")
+	print("sprite_fs type", type(sprite_fs))
+	print("sprite_fs string", sprite_fs)
+	print("node_fs string", node_fs)
+	
 	local __s = "123"
 	print("string sub", string.sub(__s, 1,2))
 	print("string sub", __s:sub(2,2))
@@ -34,7 +56,7 @@ function t:test( ... )
 	-- local __pack = string.pack("hello",1)
 	print("pack type", type(__pack))
 	for i=1, #__pack do
-		print ("string ", i, string.sub(__pack, i,i))
+		-- print ("string ", i, string.sub(__pack, i,i))
 	end
 	print("pack", __pack)
 

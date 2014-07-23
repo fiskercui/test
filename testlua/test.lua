@@ -9,8 +9,8 @@ local tests = {
 	-- "testenv",
 	-- "testtable",
 	-- "testfunction",
-	-- "teststring",
-	"testbytearray"
+	"teststring",
+	-- "testbytearray"
 }
 
 function  startAllTests()
