@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <string.h>
+#include <complex>
+using std::complex;
 
 extern "C"
 {
@@ -144,11 +146,96 @@ void testTable()
   lua_close(L);
 }
 
+void testLuaFunction()
+{
+  char* szLua_code = 
+      "function gsub(Str, Mode, Tag)\n"
+      "    a, b = string.gsub(Str, Mode, Tag)\n"
+      "    c = string.upper(a)\n"
+      "    return a,b,c \n"
+      "end"
+      ;
+
+  printf("szLua_code=%s\n", szLua_code);
+
+  const char* szMode = "(%w+)%s*=%s*(%w+)";
+  const char* szStr = "key1 = value1 key2 = value2";
+  const char* szTag = "<%1>%2<%1>";
+
+  lua_State* L = luaL_newstate();
+  luaL_openlibs(L);
+
+  bool err = luaL_loadbuffer(L, szLua_code, strlen(szLua_code), "demo") || lua_pcall(L, 0, 0, 0);
+  if (err)
+  {
+      fprintf(stderr, "%s", lua_tostring(L, -1));
+      lua_pop(L, 1);   //pop error message from the stack 
+  }
+  else
+  {
+    lua_getglobal(L, "gsub");
+    if(lua_isfunction(L, -1))
+    {
+      lua_pushstring(L, szStr);
+      lua_pushstring(L, szMode);
+      lua_pushstring(L, szTag);
+      if (0 != lua_pcall(L ,3, 2, 0))
+      {
+        fprintf(stderr, "%s", lua_tostring(L, -1));
+        lua_pop(L, 1);   //pop error message from the stack   
+      }
+      else
+      {
+        printf("a = %s\n", lua_tostring(L, -2));
+        printf("b = %s\n", lua_tostring(L, -1));
+        lua_pop(L, 2);
+      }
+    }
+    else
+    {
+        lua_pop(L, 1);
+    }
+  }
+  lua_close(L);
+
+}
+
+int calcComplex(lua_State *L)
+{
+  double r = luaL_checknumber(L, 1);
+  double i = luaL_checknumber(L, 2);
+  complex<double> c(r, i);
+  lua_pushnumber(L, abs(c));
+  lua_pushnumber(L, arg(c)*180/3.14159);
+  return 2;
+}
+
+void testCppFunction()
+{
+  char* szLua_code = "v, a = calcComplex(3, 4)\n"
+                    "print(v,a)\n";
+
+  lua_State* L = luaL_newstate();
+  luaL_openlibs(L);
+
+  lua_pushcfunction(L, calcComplex);
+  lua_setglobal(L, "calcComplex");
+
+  bool err = luaL_loadstring(L, szLua_code) || lua_pcall(L, 0, 0, 0);
+  if (err)
+  {
+    fprintf(stderr, "%s", lua_tostring(L, -1));
+    lua_pop(L, 1);   //pop error message from the stack  
+  }
+  lua_close(L);
+}
+
 
 int main (void) 
 {
-  testTable();
+  // testTable();
   // testExchangeData();
   // testLua();
+  testCppFunction();
   return 0;
 }
