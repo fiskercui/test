@@ -5,11 +5,11 @@ require('base.class')
 local tests = {
 	-- "testdebug",
 	-- "testmetatable",
-	-- "testserialize",
+	"testserialize",
 	-- "testenv",
 	-- "testtable",
 	-- "testfunction",
-	"teststring",
+	-- "teststring",
 	-- "testbytearray"
 }
 

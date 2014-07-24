@@ -105,6 +105,22 @@ function t:test(...)
   print(s)
 
   print_table(unserialize_table(s))
+
+
+--目前支持字符串的序列化
+  local product = {
+            ["unitPrice"] = "10.2",
+            ["productPrice"] = "102",
+            ["billNo"] = "987654",
+            ["billTitle"] = "购买血之刃",
+            ["RoleId"] = "momo",
+            ["ZoneId"] = "ZoneId",
+            ["payDescription"] = "hahahahah",
+            ["productName"] = "血之刃"
+        }
+  local serial_product = serialize_obj(product)
+  print(serial_product)
+  print_table(unserialize_table(serial_product))
 end
 
 return t
