@@ -1,15 +1,17 @@
 
 require('base.class')
+require('base.json')
 -- require('pack')
 
 local tests = {
 	-- "testdebug",
 	-- "testmetatable",
-	"testserialize",
+	-- "testserialize",
 	-- "testenv",
 	-- "testtable",
 	-- "testfunction",
 	-- "teststring",
+	"testjson"
 	-- "testbytearray"
 }
 
