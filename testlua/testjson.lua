@@ -48,7 +48,39 @@ function t:test(...)
 	local tb = json.decode('{"a":1,"b":"ss","c":{"c1":1,"c2":2},"d":[10,11],"1":100}')
 	print("tb",tb)
 
-	dump(tb)
+
+	local response = '{	"result":0,		 \
+				"cn":"我是中文",			\
+				"token":"1d2eccd9f16d1db1",			\
+				"uname":"0", \
+				"lastGameServer":"",	\
+				"en":"i am english",	\
+				"uin":"0",	\
+				"msg":"OK",	\
+				"gameServers":[				\
+				{											\
+					"name":"1区月光宝地",						\
+					"IP":"113.107.167.207:5001",			\
+					"load":0,								\
+					"ext":0									\
+				},											\
+				{											\
+					"name":"2区圣火巢穴",						\
+					"IP":"113.107.167.207:5002",			\
+					"load":0,								\
+					"ext":0									\
+				},											\
+				{											\
+					"name":"3区水雾山脉",						\
+					"IP":"113.107.167.207:5003",			\
+					"load":0,								\
+					"ext":0									\
+				}											\
+				]											\
+			}'													
+	print("response", json.decode(response))
+
+	dump(json.decode(response))
 	
 end
 
