@@ -210,6 +210,9 @@ int calcComplex(lua_State *L)
   return 2;
 }
 
+/*
+lua call cpp function
+*/
 void testCppFunction()
 {
   char* szLua_code = "v, a = calcComplex(3, 4)\n"
@@ -306,13 +309,172 @@ void testGlobalIndex()
 
 }
 
+
+
+/*
+  test class
+*/
+class Window
+{
+public:
+  Window()
+  {
+    m_a = 123;
+    printf("new window\n");
+  }
+
+  ~Window()
+  {
+    printf("delete window\n");
+  }
+
+  void setPos(int posx, int posy, int width, int height)
+  {
+    printf("set postion:%d, %d, %d, %d\n", posx, posy, width, height);
+  }
+
+  void show()
+  {
+    printf("show\n");
+  }
+public:
+  int m_a;
+};
+
+int lua_newWindow(lua_State* L)
+{
+  // Window* window = NULL;
+  // if(lua_isuserdata(L,1))
+  // {
+  //   window = *(Window*)luaL_checkudata(L, 1, "MyWindow");
+  // }
+
+  printf("lua_newWindow\n");
+  Window* pWindowUserData = (Window*) lua_newuserdata(L, sizeof(Window));
+  printf("pWindowUserData Addr::%0lX\n", pWindowUserData);
+  new(pWindowUserData) Window;
+  printf("windows data m_a:%d\n", pWindowUserData->m_a);
+  luaL_getmetatable(L, "MyWindow");
+  lua_setmetatable(L, -2);
+  return 1;
+}
+
+int lua_delWindow(lua_State* L)
+{
+  printf("lua_delWindow\n");
+
+  Window* window = (Window*)luaL_checkudata(L, 1 , "MyWindow");
+    printf("windows data m_a:%d\n", window->m_a);
+  if(window != nullptr)
+  {
+      delete window;
+  }
+  return 0;
+}
+
+int lua_showWindow(lua_State* L)
+{
+  Window* window = (Window*) luaL_checkudata(L, 1, "MyWindow");
+  if(window)
+  {
+    window->show();
+  }
+  else
+  {
+    printf("lua_showWindow is null\n");
+  }
+}
+
+int lua_setWindowPos(lua_State* L)
+{
+  Window* window = (Window*) luaL_checkudata(L,1 ,"MyWindow");
+  if(window)
+  {
+    window->setPos(luaL_checkint(L, 2), luaL_checkint(L, 3), 
+                  luaL_checkint(L, 4), luaL_checkint(L, 5));
+  }
+  else
+  {
+    printf("lua_setPosWindow is null\n");
+  }
+}
+
+static const struct  luaL_reg lib_Window[] = {
+  {"new", lua_newWindow},
+  {"del", lua_delWindow},
+  {"pos", lua_setWindowPos},
+  {"show", lua_showWindow},
+  {NULL, NULL}
+};
+
+int luaopen_Window(lua_State* L)
+{
+  luaL_newmetatable(L, "MyWindow");
+
+  lua_pushvalue(L, -1);
+  lua_setfield(L, -2, "__index");//table.index = table
+
+  lua_pushcfunction(L, lua_showWindow);
+  lua_setfield(L, -2, "show");
+
+  lua_pushcfunction(L, lua_setWindowPos);
+  lua_setfield(L, -2, "pos");
+
+  // lua_pushcfunction(L, lua_delWindow);
+  // lua_setfield(L, -2, "del");
+
+  lua_pushcfunction(L, lua_delWindow);
+  lua_setfield(L, -2, "__gc");
+
+  // lua_pushcfunction(L, lua_setWindowPos);
+  // lua_setfield(L, -2, "pos");
+
+
+  // lua 5.2 改动为luaL_newlib
+  luaL_register(L, "Window", lib_Window);
+
+
+  return 1;
+}
+
+void testCppObjectLua()
+{
+    char* szLua_code=
+        "local window = Window.new(); "    //在fm上建立一个按钮btn
+        "for key,value in pairs( Window) do "
+        "  print(\"window\", key, value) "
+        "end "
+        "local __mt = getmetatable(window) "
+        "for key,value in pairs( __mt.__index) do "
+        "  print(\"index\", key, value) "
+        "end "
+        "window:pos(100, 40, 150, 63); "
+        "window:show(); ";
+        // "Window.del(window);";
+
+    lua_State *L = luaL_newstate();
+    luaL_openlibs(L); 
+    luaopen_Window(L);
+    bool err = luaL_loadstring(L, szLua_code) || lua_pcall(L, 0, 0, 0);
+    if (err)
+    {
+      fprintf(stderr, "%s", lua_tostring(L, -1));
+      lua_pop(L, 1);   //pop error message from the stack  
+    }
+    lua_close(L);   
+}
+
+
+
+
 int main (void) 
 {
   // testTable();
   // testExchangeData();
   // testLua();
-  testCppFunction();
-  testClosure();
-  testGlobalIndex();
+  // testCppFunction();
+  // testClosure();
+  // testGlobalIndex();
+  testCppObjectLua();
   return 0;
 }
