@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		740CF1E31988C9DB0098342C /* testcpp.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 740CF1E21988C9DB0098342C /* testcpp.1 */; };
 		740CF1ED1988CA870098342C /* testlua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 740CF1EC1988CA870098342C /* testlua.cpp */; };
 /* End PBXBuildFile section */
 
@@ -18,7 +17,6 @@
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				740CF1E31988C9DB0098342C /* testcpp.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
@@ -26,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		740CF1DD1988C9DB0098342C /* testcpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testcpp; sourceTree = BUILT_PRODUCTS_DIR; };
-		740CF1E21988C9DB0098342C /* testcpp.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = testcpp.1; sourceTree = "<group>"; };
 		740CF1EC1988CA870098342C /* testlua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testlua.cpp; path = ../testlua.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,7 +58,6 @@
 		740CF1DF1988C9DB0098342C /* testcpp */ = {
 			isa = PBXGroup;
 			children = (
-				740CF1E21988C9DB0098342C /* testcpp.1 */,
 			);
 			path = testcpp;
 			sourceTree = "<group>";
