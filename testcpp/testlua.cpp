@@ -12,9 +12,6 @@ extern "C"
 
 void testExchangeData()
 {
-  char buff[256];
-  int error;
-
   const char* szLua_code = "r = string.gsub(c_Str, c_Mode, c_Tag)"
                     "u = string.upper(r)";
   printf("szLua_code=%s\n", szLua_code);
@@ -73,7 +70,7 @@ void testLua()
 
 void testTable()
 {
-  char* szLua_code =
+  const char* szLua_code =
     "x = {}"
     "x[1], x[2] = string.gsub(c.Str, c.Mode, c.Tag)"
     "print(c.Str, c.Mode, c.Tag)"
@@ -148,7 +145,7 @@ void testTable()
 
 void testLuaFunction()
 {
-  char* szLua_code = 
+  const char* szLua_code =
       "function gsub(Str, Mode, Tag)\n"
       "    a, b = string.gsub(Str, Mode, Tag)\n"
       "    c = string.upper(a)\n"
@@ -215,7 +212,7 @@ lua call cpp function
 */
 void testCppFunction()
 {
-  char* szLua_code = "v, a = calcComplex(3, 4)\n"
+  const char* szLua_code = "v, a = calcComplex(3, 4)\n"
                     "print(v,a)\n";
 
   lua_State* L = luaL_newstate();
@@ -260,7 +257,7 @@ int newCount(lua_State* L)
 
 void testClosure()
 {
-    char *szLua_code =
+    const char *szLua_code =
            "c1 = NewCount() "
            "c2 = NewCount() "
            "for i=1,5 do print(c1()) end "
@@ -282,7 +279,7 @@ void testClosure()
 //test index 
 void testGlobalIndex()
 {
-    char *szLua_code =
+    const char *szLua_code =
            "a = 10 "
            "b=\"hello\" "
            "c=true ";
@@ -337,6 +334,11 @@ public:
   {
     printf("show\n");
   }
+    
+  void display()
+  {
+      printf("display:%d\n",m_a);
+  }
 public:
   int m_a;
 };
@@ -349,11 +351,13 @@ int lua_newWindow(lua_State* L)
   //   window = *(Window*)luaL_checkudata(L, 1, "MyWindow");
   // }
 
+//ps:lua_newuserdata 的内存会被lua自己回收， Window**的形式
   printf("lua_newWindow\n");
-  Window* pWindowUserData = (Window*) lua_newuserdata(L, sizeof(Window));
-  printf("pWindowUserData Addr::%0lX\n", pWindowUserData);
-  new(pWindowUserData) Window;
-  printf("windows data m_a:%d\n", pWindowUserData->m_a);
+  Window** pWindowUserData = (Window**) lua_newuserdata(L, sizeof(Window));
+  printf("lua_newWindow Addr no init::%lX\n", *pWindowUserData);
+  *pWindowUserData =new Window;
+  printf("lua_newWindow Addr::%lX\n", *pWindowUserData);
+  printf("windows data m_a:%d\n", (*pWindowUserData)->m_a);
   luaL_getmetatable(L, "MyWindow");
   lua_setmetatable(L, -2);
   return 1;
@@ -363,11 +367,13 @@ int lua_delWindow(lua_State* L)
 {
   printf("lua_delWindow\n");
 
-  Window* window = (Window*)luaL_checkudata(L, 1 , "MyWindow");
-    printf("windows data m_a:%d\n", window->m_a);
+  Window** window = (Window**)luaL_checkudata(L, 1 , "MyWindow");
+    printf("windows data m_a:%d\n", (*window)->m_a);
   if(window != nullptr)
   {
-      delete window;
+      printf("windows has start delete\n");
+      delete* window;
+      printf("windows has end delete\n");
   }
   return 0;
 }
@@ -375,7 +381,8 @@ int lua_delWindow(lua_State* L)
 int lua_showWindow(lua_State* L)
 {
   Window* window = (Window*) luaL_checkudata(L, 1, "MyWindow");
-  if(window)
+  printf("lua_showWindow Addr::%lX\n", window);
+    if(window)
   {
     window->show();
   }
@@ -383,20 +390,24 @@ int lua_showWindow(lua_State* L)
   {
     printf("lua_showWindow is null\n");
   }
+  return 0;
 }
 
 int lua_setWindowPos(lua_State* L)
 {
-  Window* window = (Window*) luaL_checkudata(L,1 ,"MyWindow");
+  Window* window = *(Window**) luaL_checkudata(L,1 ,"MyWindow");
+  printf("lua_setWindowPos Addr::%lX\n", window);
   if(window)
   {
     window->setPos(luaL_checkint(L, 2), luaL_checkint(L, 3), 
                   luaL_checkint(L, 4), luaL_checkint(L, 5));
+    window->display();
   }
   else
   {
     printf("lua_setPosWindow is null\n");
   }
+  return 0;
 }
 
 static const struct  luaL_reg lib_Window[] = {
@@ -439,7 +450,7 @@ int luaopen_Window(lua_State* L)
 
 void testCppObjectLua()
 {
-    char* szLua_code=
+    const char* szLua_code=
         "local window = Window.new(); "    //在fm上建立一个按钮btn
         "for key,value in pairs( Window) do "
         "  print(\"window\", key, value) "
@@ -463,8 +474,6 @@ void testCppObjectLua()
     }
     lua_close(L);   
 }
-
-
 
 
 int main (void) 
