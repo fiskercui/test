@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		740CF1ED1988CA870098342C /* testlua.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 740CF1EC1988CA870098342C /* testlua.cpp */; };
+		742A4545198B966F00E2104C /* tolua_event.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A453F198B966F00E2104C /* tolua_event.c */; };
+		742A4546198B966F00E2104C /* tolua_is.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A4541198B966F00E2104C /* tolua_is.c */; };
+		742A4547198B966F00E2104C /* tolua_map.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A4542198B966F00E2104C /* tolua_map.c */; };
+		742A4548198B966F00E2104C /* tolua_push.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A4543198B966F00E2104C /* tolua_push.c */; };
+		742A4549198B966F00E2104C /* tolua_to.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A4544198B966F00E2104C /* tolua_to.c */; };
+		742A456C198B967F00E2104C /* tarray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742A454B198B967F00E2104C /* tarray.cpp */; };
+		742A4575198B9D2900E2104C /* tarraybind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742A4574198B9D2900E2104C /* tarraybind.cpp */; };
+		742A457C198B9F2300E2104C /* tarray.lua in CopyFiles */ = {isa = PBXBuildFile; fileRef = 742A457B198B9F2300E2104C /* tarray.lua */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,11 +27,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		742A457A198B9F0C00E2104C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				742A457C198B9F2300E2104C /* tarray.lua in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		740CF1DD1988C9DB0098342C /* testcpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testcpp; sourceTree = BUILT_PRODUCTS_DIR; };
-		740CF1EC1988CA870098342C /* testlua.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = testlua.cpp; path = ../testlua.cpp; sourceTree = "<group>"; };
+		742A453E198B966F00E2104C /* tolua++.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tolua++.h"; sourceTree = "<group>"; };
+		742A453F198B966F00E2104C /* tolua_event.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_event.c; sourceTree = "<group>"; };
+		742A4540198B966F00E2104C /* tolua_event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tolua_event.h; sourceTree = "<group>"; };
+		742A4541198B966F00E2104C /* tolua_is.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_is.c; sourceTree = "<group>"; };
+		742A4542198B966F00E2104C /* tolua_map.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_map.c; sourceTree = "<group>"; };
+		742A4543198B966F00E2104C /* tolua_push.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_push.c; sourceTree = "<group>"; };
+		742A4544198B966F00E2104C /* tolua_to.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_to.c; sourceTree = "<group>"; };
+		742A454B198B967F00E2104C /* tarray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tarray.cpp; sourceTree = "<group>"; };
+		742A454C198B967F00E2104C /* tarray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tarray.h; sourceTree = "<group>"; };
+		742A454E198B967F00E2104C /* tarray.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tarray.pkg; sourceTree = "<group>"; };
+		742A4574198B9D2900E2104C /* tarraybind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tarraybind.cpp; sourceTree = "<group>"; };
+		742A457B198B9F2300E2104C /* tarray.lua */ = {isa = PBXFileReference; lastKnownFileType = text; name = tarray.lua; path = "../tolua++/test/tarray.lua"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +69,8 @@
 		740CF1D41988C9DA0098342C = {
 			isa = PBXGroup;
 			children = (
+				742A457B198B9F2300E2104C /* tarray.lua */,
+				742A453C198B964F00E2104C /* tolua */,
 				740CF1E91988CA490098342C /* test */,
 				740CF1DF1988C9DB0098342C /* testcpp */,
 				740CF1DE1988C9DB0098342C /* Products */,
@@ -65,9 +95,44 @@
 		740CF1E91988CA490098342C /* test */ = {
 			isa = PBXGroup;
 			children = (
-				740CF1EC1988CA870098342C /* testlua.cpp */,
 			);
 			name = test;
+			sourceTree = "<group>";
+		};
+		742A453C198B964F00E2104C /* tolua */ = {
+			isa = PBXGroup;
+			children = (
+				742A454A198B967F00E2104C /* test */,
+				742A453D198B966F00E2104C /* src */,
+			);
+			name = tolua;
+			sourceTree = "<group>";
+		};
+		742A453D198B966F00E2104C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				742A453E198B966F00E2104C /* tolua++.h */,
+				742A453F198B966F00E2104C /* tolua_event.c */,
+				742A4540198B966F00E2104C /* tolua_event.h */,
+				742A4541198B966F00E2104C /* tolua_is.c */,
+				742A4542198B966F00E2104C /* tolua_map.c */,
+				742A4543198B966F00E2104C /* tolua_push.c */,
+				742A4544198B966F00E2104C /* tolua_to.c */,
+			);
+			name = src;
+			path = "../tolua++/src";
+			sourceTree = "<group>";
+		};
+		742A454A198B967F00E2104C /* test */ = {
+			isa = PBXGroup;
+			children = (
+				742A4574198B9D2900E2104C /* tarraybind.cpp */,
+				742A454B198B967F00E2104C /* tarray.cpp */,
+				742A454C198B967F00E2104C /* tarray.h */,
+				742A454E198B967F00E2104C /* tarray.pkg */,
+			);
+			name = test;
+			path = "../tolua++/test";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +145,7 @@
 				740CF1D91988C9DB0098342C /* Sources */,
 				740CF1DA1988C9DB0098342C /* Frameworks */,
 				740CF1DB1988C9DB0098342C /* CopyFiles */,
+				742A457A198B9F0C00E2104C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -121,7 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				740CF1ED1988CA870098342C /* testlua.cpp in Sources */,
+				742A456C198B967F00E2104C /* tarray.cpp in Sources */,
+				742A4545198B966F00E2104C /* tolua_event.c in Sources */,
+				742A4575198B9D2900E2104C /* tarraybind.cpp in Sources */,
+				742A4548198B966F00E2104C /* tolua_push.c in Sources */,
+				742A4549198B966F00E2104C /* tolua_to.c in Sources */,
+				742A4547198B966F00E2104C /* tolua_map.c in Sources */,
+				742A4546198B966F00E2104C /* tolua_is.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
