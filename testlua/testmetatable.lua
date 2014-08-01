@@ -10,6 +10,21 @@ t.testIndex =  function (...)
 		setmetatable(o ,Window.mt)
 		return o
 	end
+	--是否写入index 元方法
+	wt = Window.new({})
+	print("before index", Window.mt.__index)
+	print("before index Window width", wt.width)
+	print("before index Window height", wt.height)
+	print("before index Window x", wt.window)
+
+	Window.mt.__index = function (table, key)
+      return Window.prototype[key]
+    end
+
+	print("after index", Window.mt.__index)
+	print("after index Window width", wt.width)
+	print("after index Window height", wt.height)
+	print("after index Window x", wt.window)
 
 	-- Window.mt.__index = Window.prototype
 	Window.mt.__index = function (table, key)
