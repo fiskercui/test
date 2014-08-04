@@ -92,6 +92,12 @@ local function  print_table(obj)
     end
 end
 
+local function test_string(s)
+  for i = 1, #s do
+    local c = string.sub(s, i, i)
+    print (c)
+  end
+end
 
 function t:test(...)
   print("serialize test")

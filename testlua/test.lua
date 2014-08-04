@@ -5,13 +5,14 @@ require('base.json')
 
 local tests = {
 	-- "testdebug",
-	"testmetatable",
+	-- "testmetatable",
+	-- "testutf8",
 	-- "testserialize",
 	-- "testenv",
 	-- "testtable",
 	-- "testfunction",
 	-- "teststring",
-	-- "testjson"
+	"testjson"
 	-- "testbytearray"
 }
 

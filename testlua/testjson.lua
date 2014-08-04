@@ -81,6 +81,10 @@ function t:test(...)
 	print("response", json.decode(response))
 
 	dump(json.decode(response))
+
+	print("____________")
+	local s = "%7B%22result%22%3A0%2C%22lastGameServer%22%3A%22%22%2C%22msg%22%3A%22ok%22%2C%22gameServers%22%3A%5B%7B%22gamezoneID%22%3A14%2C%22name%22%3A%22%3F%3F+++1%3F%22%2C%22IP%22%3A%22113.107.148.124%3A5001%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A25%2C%22name%22%3A%22%3F%3F+++2%3F%22%2C%22IP%22%3A%22113.107.148.124%3A5002%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A26%2C%22name%22%3A%22%3F%3F+++3%3F%22%2C%22IP%22%3A%22113.107.148.124%3A5003%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A27%2C%22name%22%3A%22%3F%3F+++4%3F%22%2C%22IP%22%3A%22113.107.167.235%3A5001%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A28%2C%22name%22%3A%22%3F%3F+++5%3F%22%2C%22IP%22%3A%22113.107.167.235%3A5002%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A29%2C%22name%22%3A%22%3F%3F+++6%3F%22%2C%22IP%22%3A%22113.107.167.235%3A5003%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%5D%7D"
+	print(json.decode(s))
 	
 end
 
