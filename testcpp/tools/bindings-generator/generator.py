@@ -1071,7 +1071,6 @@ class Generator(object):
             # print("%s %s - %s" % (">" * depth, node.displayname, node.kind))
             self._deep_iterate(node, depth + 1)
     def scriptname_from_native(self, namespace_class_name, namespace_name):
-        print "------------------------------"
         # print self.config
         script_ns_dict = self.config['conversions']['ns_map']
         for (k, v) in script_ns_dict.items():
