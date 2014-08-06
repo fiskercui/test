@@ -1,6 +1,8 @@
 local t = {}
 
 local json = require('base.json')
+require('base.urlCodec')
+require('base.utf8')
 
 
 local function dump(tb)
@@ -83,8 +85,15 @@ function t:test(...)
 	dump(json.decode(response))
 
 	print("____________")
-	local s = "%7B%22result%22%3A0%2C%22lastGameServer%22%3A%22%22%2C%22msg%22%3A%22ok%22%2C%22gameServers%22%3A%5B%7B%22gamezoneID%22%3A14%2C%22name%22%3A%22%3F%3F+++1%3F%22%2C%22IP%22%3A%22113.107.148.124%3A5001%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A25%2C%22name%22%3A%22%3F%3F+++2%3F%22%2C%22IP%22%3A%22113.107.148.124%3A5002%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A26%2C%22name%22%3A%22%3F%3F+++3%3F%22%2C%22IP%22%3A%22113.107.148.124%3A5003%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A27%2C%22name%22%3A%22%3F%3F+++4%3F%22%2C%22IP%22%3A%22113.107.167.235%3A5001%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A28%2C%22name%22%3A%22%3F%3F+++5%3F%22%2C%22IP%22%3A%22113.107.167.235%3A5002%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A29%2C%22name%22%3A%22%3F%3F+++6%3F%22%2C%22IP%22%3A%22113.107.167.235%3A5003%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%5D%7D"
+	local s = "%7B%22result%22%3A0%2C%22lastGameServer%22%3A%22%22%2C%22msg%22%3A%22ok%22%2C%22gameServers%22%3A%5B%7B%22gamezoneID%22%3A14%2C%22name%22%3A%22%E6%B7%B7%E6%9C%8D+++1%E5%8C%BA%22%2C%22IP%22%3A%22113.107.148.124%3A5001%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A25%2C%22name%22%3A%22%E6%B7%B7%E6%9C%8D+++2%E5%8C%BA%22%2C%22IP%22%3A%22113.107.148.124%3A5002%22%2C%22load%22%3A0%2C%22ext%22%3A0%7D%2C%7B%22gamezoneID%22%3A26%2C%22name%22%3A%22%E6%B7%B7%E6%9C%8D+++3%E5%8C%BA%22%2C%2"
+
+	print(string.url_decode(s))
 	print(json.decode(s))
+
+
+	local s = "%7B%22result%22%3A1%2C%22msg%22%3A%22invalid+user+or+no+login%2C%E5%87%BA%E9%94%99%2C1.2.3.4%22%7D"
+	print(string.url_decode(s))
+	print(json.decode(s))	
 	
 end
 
