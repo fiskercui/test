@@ -1,7 +1,7 @@
 local t = {}
 
 function t:test( ... )
-	print("testenv") --test.lua
+	print("testenv") 
 	local f=function (t,i) return os.getenv(i) end
 	setmetatable(getfenv(),{__index=f})
 

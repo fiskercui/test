@@ -1034,7 +1034,9 @@ class Generator(object):
         print("====\n")
         
     def _parse_headers(self):
+        print("_parse_headers")
         for header in self.headers:
+            print("header:%s"%(header))
             tu = self.index.parse(header, self.clang_args)
             if len(tu.diagnostics) > 0:
                 self._pretty_print(tu.diagnostics)

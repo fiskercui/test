@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B5C5F0D199299AC00D77E8F /* testtolua++.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B5C5F0C199299AC00D77E8F /* testtolua++.cpp */; };
+		2B5C5F1019929A1000D77E8F /* tclass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B5C5F0E19929A1000D77E8F /* tclass.cpp */; };
+		2B5C5F1D19929A8B00D77E8F /* autogentestclassbindings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B5C5F1B19929A8B00D77E8F /* autogentestclassbindings.cpp */; };
+		2B5C5F2219929DBD00D77E8F /* LuaBasicConversions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B5C5F1E19929DBD00D77E8F /* LuaBasicConversions.cpp */; };
+		2B5C5F2319929DBD00D77E8F /* tolua_fix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B5C5F2019929DBD00D77E8F /* tolua_fix.cpp */; };
 		742A4545198B966F00E2104C /* tolua_event.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A453F198B966F00E2104C /* tolua_event.c */; };
 		742A4546198B966F00E2104C /* tolua_is.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A4541198B966F00E2104C /* tolua_is.c */; };
 		742A4547198B966F00E2104C /* tolua_map.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A4542198B966F00E2104C /* tolua_map.c */; };
@@ -14,7 +19,6 @@
 		742A4549198B966F00E2104C /* tolua_to.c in Sources */ = {isa = PBXBuildFile; fileRef = 742A4544198B966F00E2104C /* tolua_to.c */; };
 		742A456C198B967F00E2104C /* tarray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742A454B198B967F00E2104C /* tarray.cpp */; };
 		742A4575198B9D2900E2104C /* tarraybind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742A4574198B9D2900E2104C /* tarraybind.cpp */; };
-		742A457C198B9F2300E2104C /* tarray.lua in CopyFiles */ = {isa = PBXBuildFile; fileRef = 742A457B198B9F2300E2104C /* tarray.lua */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,13 +37,28 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				742A457C198B9F2300E2104C /* tarray.lua in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2B5C5F0C199299AC00D77E8F /* testtolua++.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "testtolua++.cpp"; sourceTree = "<group>"; };
+		2B5C5F0E19929A1000D77E8F /* tclass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tclass.cpp; sourceTree = "<group>"; };
+		2B5C5F0F19929A1000D77E8F /* tclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tclass.h; sourceTree = "<group>"; };
+		2B5C5F1119929A4800D77E8F /* script */ = {isa = PBXFileReference; lastKnownFileType = folder; name = script; path = "../tolua++/script"; sourceTree = "<group>"; };
+		2B5C5F1519929A8B00D77E8F /* autogentestclassbindings_api.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = autogentestclassbindings_api.lua; sourceTree = "<group>"; };
+		2B5C5F1619929A8B00D77E8F /* Tst_A.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tst_A.lua; sourceTree = "<group>"; };
+		2B5C5F1719929A8B00D77E8F /* Tst_B.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tst_B.lua; sourceTree = "<group>"; };
+		2B5C5F1819929A8B00D77E8F /* Tst_C.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tst_C.lua; sourceTree = "<group>"; };
+		2B5C5F1919929A8B00D77E8F /* Tst_E.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tst_E.lua; sourceTree = "<group>"; };
+		2B5C5F1A19929A8B00D77E8F /* Tst_Outside.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Tst_Outside.lua; sourceTree = "<group>"; };
+		2B5C5F1B19929A8B00D77E8F /* autogentestclassbindings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = autogentestclassbindings.cpp; sourceTree = "<group>"; };
+		2B5C5F1C19929A8B00D77E8F /* autogentestclassbindings.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = autogentestclassbindings.hpp; sourceTree = "<group>"; };
+		2B5C5F1E19929DBD00D77E8F /* LuaBasicConversions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LuaBasicConversions.cpp; sourceTree = "<group>"; };
+		2B5C5F1F19929DBD00D77E8F /* LuaBasicConversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaBasicConversions.h; sourceTree = "<group>"; };
+		2B5C5F2019929DBD00D77E8F /* tolua_fix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tolua_fix.cpp; sourceTree = "<group>"; };
+		2B5C5F2119929DBD00D77E8F /* tolua_fix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tolua_fix.h; sourceTree = "<group>"; };
 		740CF1DD1988C9DB0098342C /* testcpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testcpp; sourceTree = BUILT_PRODUCTS_DIR; };
 		742A453E198B966F00E2104C /* tolua++.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tolua++.h"; sourceTree = "<group>"; };
 		742A453F198B966F00E2104C /* tolua_event.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_event.c; sourceTree = "<group>"; };
@@ -50,9 +69,7 @@
 		742A4544198B966F00E2104C /* tolua_to.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tolua_to.c; sourceTree = "<group>"; };
 		742A454B198B967F00E2104C /* tarray.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tarray.cpp; sourceTree = "<group>"; };
 		742A454C198B967F00E2104C /* tarray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tarray.h; sourceTree = "<group>"; };
-		742A454E198B967F00E2104C /* tarray.pkg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tarray.pkg; sourceTree = "<group>"; };
 		742A4574198B9D2900E2104C /* tarraybind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tarraybind.cpp; sourceTree = "<group>"; };
-		742A457B198B9F2300E2104C /* tarray.lua */ = {isa = PBXFileReference; lastKnownFileType = text; name = tarray.lua; path = "../tolua++/test/tarray.lua"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +83,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5C5F1319929A8B00D77E8F /* bindings */ = {
+			isa = PBXGroup;
+			children = (
+				2B5C5F1419929A8B00D77E8F /* api */,
+				2B5C5F1B19929A8B00D77E8F /* autogentestclassbindings.cpp */,
+				2B5C5F1C19929A8B00D77E8F /* autogentestclassbindings.hpp */,
+			);
+			name = bindings;
+			path = "../tolua++/bindings";
+			sourceTree = "<group>";
+		};
+		2B5C5F1419929A8B00D77E8F /* api */ = {
+			isa = PBXGroup;
+			children = (
+				2B5C5F1519929A8B00D77E8F /* autogentestclassbindings_api.lua */,
+				2B5C5F1619929A8B00D77E8F /* Tst_A.lua */,
+				2B5C5F1719929A8B00D77E8F /* Tst_B.lua */,
+				2B5C5F1819929A8B00D77E8F /* Tst_C.lua */,
+				2B5C5F1919929A8B00D77E8F /* Tst_E.lua */,
+				2B5C5F1A19929A8B00D77E8F /* Tst_Outside.lua */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 		740CF1D41988C9DA0098342C = {
 			isa = PBXGroup;
 			children = (
-				742A457B198B9F2300E2104C /* tarray.lua */,
 				742A453C198B964F00E2104C /* tolua */,
 				740CF1E91988CA490098342C /* test */,
 				740CF1DF1988C9DB0098342C /* testcpp */,
@@ -102,6 +142,8 @@
 		742A453C198B964F00E2104C /* tolua */ = {
 			isa = PBXGroup;
 			children = (
+				2B5C5F1319929A8B00D77E8F /* bindings */,
+				2B5C5F1119929A4800D77E8F /* script */,
 				742A454A198B967F00E2104C /* test */,
 				742A453D198B966F00E2104C /* src */,
 			);
@@ -111,6 +153,10 @@
 		742A453D198B966F00E2104C /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2B5C5F1E19929DBD00D77E8F /* LuaBasicConversions.cpp */,
+				2B5C5F1F19929DBD00D77E8F /* LuaBasicConversions.h */,
+				2B5C5F2019929DBD00D77E8F /* tolua_fix.cpp */,
+				2B5C5F2119929DBD00D77E8F /* tolua_fix.h */,
 				742A453E198B966F00E2104C /* tolua++.h */,
 				742A453F198B966F00E2104C /* tolua_event.c */,
 				742A4540198B966F00E2104C /* tolua_event.h */,
@@ -126,10 +172,12 @@
 		742A454A198B967F00E2104C /* test */ = {
 			isa = PBXGroup;
 			children = (
+				2B5C5F0E19929A1000D77E8F /* tclass.cpp */,
+				2B5C5F0F19929A1000D77E8F /* tclass.h */,
 				742A4574198B9D2900E2104C /* tarraybind.cpp */,
 				742A454B198B967F00E2104C /* tarray.cpp */,
 				742A454C198B967F00E2104C /* tarray.h */,
-				742A454E198B967F00E2104C /* tarray.pkg */,
+				2B5C5F0C199299AC00D77E8F /* testtolua++.cpp */,
 			);
 			name = test;
 			path = "../tolua++/test";
@@ -187,11 +235,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5C5F1D19929A8B00D77E8F /* autogentestclassbindings.cpp in Sources */,
 				742A456C198B967F00E2104C /* tarray.cpp in Sources */,
+				2B5C5F0D199299AC00D77E8F /* testtolua++.cpp in Sources */,
+				2B5C5F2219929DBD00D77E8F /* LuaBasicConversions.cpp in Sources */,
+				2B5C5F1019929A1000D77E8F /* tclass.cpp in Sources */,
 				742A4545198B966F00E2104C /* tolua_event.c in Sources */,
 				742A4575198B9D2900E2104C /* tarraybind.cpp in Sources */,
 				742A4548198B966F00E2104C /* tolua_push.c in Sources */,
 				742A4549198B966F00E2104C /* tolua_to.c in Sources */,
+				2B5C5F2319929DBD00D77E8F /* tolua_fix.cpp in Sources */,
 				742A4547198B966F00E2104C /* tolua_map.c in Sources */,
 				742A4546198B966F00E2104C /* tolua_is.c in Sources */,
 			);
@@ -278,6 +331,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include,
+					"../tolua++/src/",
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_LDFLAGS = "-llua";
@@ -294,6 +348,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/local/include,
+					"../tolua++/src/",
 				);
 				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				OTHER_LDFLAGS = "-llua";

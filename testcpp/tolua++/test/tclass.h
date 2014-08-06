@@ -111,11 +111,13 @@ public:
 }; // end of namespace
 
 
-static void outside_func(Test::Tst_Outside* p_out, lua_State* ls) {
+// static void outside_func(Test::Tst_Outside* p_out, lua_State* ls) {
 
-	if (p_out) printf("method!\n");
-	else printf("static!\n");
-	//printf("luastate: %i\n", ls);
-};
+// 	if (p_out) printf("method!\n");
+// 	else printf("static!\n");
+// 	//printf("luastate: %i\n", ls);
+// };
+
+int testClass ();
 
 #endif

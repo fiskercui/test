@@ -113,4 +113,8 @@ echo ---
 echo "Generating bindings for cocos2dx..."
 set -x
 
-LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${CXX_GENERATOR_ROOT}/test/test.ini -t lua -s testandroid -o ./simple_test_bindings
+# LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${CXX_GENERATOR_ROOT}/test/test.ini -t lua -s testandroid -o ./simple_test_bindings
+
+
+LD_LIBRARY_PATH=${CXX_GENERATOR_ROOT}/libclang $PYTHON_BIN ${CXX_GENERATOR_ROOT}/generator.py ${CXX_GENERATOR_ROOT}/test/testclass.ini -t mylua -s testclass -o ../../../tolua++/bindings
+
