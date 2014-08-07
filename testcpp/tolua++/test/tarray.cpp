@@ -20,7 +20,7 @@ Point* mpp[10];
 Array array;
 Array* parray = &array;
 
-int main (void)
+int testArray (void)
 {
 	int  tolua_tarray_open (lua_State*);
     

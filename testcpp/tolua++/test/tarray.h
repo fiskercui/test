@@ -25,3 +25,6 @@ struct Array
 
 extern Array array;
 extern Array* parray;
+
+
+int testArray (void);

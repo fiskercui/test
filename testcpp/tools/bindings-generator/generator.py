@@ -1034,7 +1034,9 @@ class Generator(object):
         print("====\n")
         
     def _parse_headers(self):
+        print("_parse_headers")
         for header in self.headers:
+            print("header:%s"%(header))
             tu = self.index.parse(header, self.clang_args)
             if len(tu.diagnostics) > 0:
                 self._pretty_print(tu.diagnostics)
@@ -1071,7 +1073,6 @@ class Generator(object):
             # print("%s %s - %s" % (">" * depth, node.displayname, node.kind))
             self._deep_iterate(node, depth + 1)
     def scriptname_from_native(self, namespace_class_name, namespace_name):
-        print "------------------------------"
         # print self.config
         script_ns_dict = self.config['conversions']['ns_map']
         for (k, v) in script_ns_dict.items():
