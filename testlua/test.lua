@@ -10,9 +10,9 @@ local tests = {
 	-- "testserialize",
 	-- "testenv",
 	-- "testtable",
-	-- "testfunction",
+	"testfunction",
 	-- "teststring",
-	"testjson"
+	-- "testjson"
 	-- "testbytearray"
 }
 
