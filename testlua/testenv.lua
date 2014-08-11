@@ -1,7 +1,32 @@
 local t = {}
 
+
+local function print_table(tbl, flag, depth)
+--- pairs 而不是 ipairs
+	flag = flag or "**"
+	depth = depth or 1
+	for key,value in pairs(tbl) do
+		print(flag .. "    " .. key, value)
+		if type(value) == 'table' then
+			flag = flag .. "**"
+			depth = depth + 1
+			if depth < 10 then
+				print_table(value, flag, depth)
+			end
+		end
+	end
+end
+
 function t:test( ... )
-	print("testenv") 
+	print("testenv")
+
+	print("**********current env", getfenv()) 
+	print_table(getfenv())
+
+
+	-- print("*******_G")
+	-- print_table(getfenv()._G)
+
 	local f=function (t,i) return os.getenv(i) end
 	setmetatable(getfenv(),{__index=f})
 
