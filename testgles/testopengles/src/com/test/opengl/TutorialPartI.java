@@ -1,4 +1,4 @@
-package se.jayway.opengl.tutorial;
+package com.test.opengl;
 
 import android.app.Activity;
 import android.opengl.GLSurfaceView;

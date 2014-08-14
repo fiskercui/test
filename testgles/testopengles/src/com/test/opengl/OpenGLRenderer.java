@@ -1,4 +1,4 @@
-package se.jayway.opengl.tutorial;
+package com.test.opengl;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
