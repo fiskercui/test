@@ -79,7 +79,7 @@ public class OpenGLRenderer implements Renderer {
 		// Scale it to 50% of square B
 		gl.glScalef(.5f, .5f, .5f);
 		// Rotate around it's own center.
-		gl.glRotatef(angle * 10, 0, 0, 1);
+//		gl.glRotatef(angle * 10, 0, 0, 1);
 		// Draw square C.
 		square.draw(gl);
 		
