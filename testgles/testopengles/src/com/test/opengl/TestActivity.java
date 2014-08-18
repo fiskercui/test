@@ -1,5 +1,8 @@
 package com.test.opengl;
 
+import Square.SquareRenderer;
+import Mesh.MeshRenderer;
+
 import android.app.Activity;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -16,7 +19,9 @@ public class TestActivity extends Activity {
             WindowManager.LayoutParams.FLAG_FULLSCREEN); // (NEW)
 
  		GLSurfaceView view = new GLSurfaceView(this);
-   		view.setRenderer(new OpenGLRenderer());
+
+ 		//   		view.setRenderer(new SquareRenderer());
+ 		view.setRenderer(new MeshRenderer()); 
    		setContentView(view);
     }
 }

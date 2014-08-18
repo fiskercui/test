@@ -1,4 +1,4 @@
-package com.test.opengl;
+package Square;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -16,9 +16,9 @@ public class Square {
 	// The order we like to connect them.
 	private short[] indices = { 0, 1, 2, 0, 2, 3 };
 	// Our vertex buffer.
-	private FloatBuffer vertexBuffer;
+	protected FloatBuffer vertexBuffer;
 	// Our index buffer.
-	private ShortBuffer indexBuffer;
+	protected ShortBuffer indexBuffer;
 
 	public Square() {
 		// a float is 4 bytes, therefore we

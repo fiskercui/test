@@ -1,4 +1,4 @@
-package com.test.opengl;
+package Square;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -7,7 +7,7 @@ import android.opengl.GLU;
 import android.opengl.GLSurfaceView.Renderer;
 import android.util.Log;
 
-public class OpenGLRenderer implements Renderer {
+public class SquareRenderer implements Renderer {
 	/*
 	 * (non-Javadoc)
 	 *
@@ -18,7 +18,7 @@ public class OpenGLRenderer implements Renderer {
          * 
 	 */
 	
-	public Square square = new Square();
+	public FlatColoredSquare square = new FlatColoredSquare();
 	public float angle = 30.0f;
 	
 	
