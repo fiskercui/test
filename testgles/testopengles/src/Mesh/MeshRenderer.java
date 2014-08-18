@@ -17,14 +17,12 @@ public class MeshRenderer implements Renderer {
          * egl.EGLConfig)
          * 
 	 */
-	private Mesh root;
+	private Group root;
 	
 	public MeshRenderer(){
 		Group group = new Group();
-		Cube cube = new Cube(1, 1, 1);
-		cube.rx = 45;
-		cube.ry = 45;
-		group.add(cube);
+
+		
 		root = group;
 	}
 	
@@ -84,5 +82,10 @@ public class MeshRenderer implements Renderer {
 		gl.glMatrixMode(GL10.GL_MODELVIEW);
 		// Reset the modelview matrix
 		gl.glLoadIdentity();
+	}
+	
+	public void AddMesh(Mesh mesh)
+	{
+		root.add(mesh);
 	}
 }
