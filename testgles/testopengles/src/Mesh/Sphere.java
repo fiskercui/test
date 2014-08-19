@@ -20,7 +20,7 @@ public class Sphere extends Mesh {
 		vbb = ByteBuffer.allocateDirect(v.length * v[0].length * 4);
 		vbb.order(ByteOrder.nativeOrder());
 		vBuf = vbb.asFloatBuffer();
-
+		gl.glColor4f(0.5f, 0f, 0f, 1f);
 		gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
 		gl.glEnableClientState(GL10.GL_NORMAL_ARRAY);
 

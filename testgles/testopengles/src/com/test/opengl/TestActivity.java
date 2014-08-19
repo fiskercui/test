@@ -38,11 +38,11 @@ public class TestActivity extends Activity {
 //		cube.ry = 45;
 //		
 //		Sphere sphere = new Sphere();
-//		
+
 // 		MeshRenderer renderer = new MeshRenderer();
-// 		//add先后顺序有影响
-//// 		renderer.AddMesh(cube);
-//// 		renderer.AddMesh(plane);
+ 		//add先后顺序有影响
+// 		renderer.AddMesh(cube);
+// 		renderer.AddMesh(plane);
 // 		renderer.AddMesh(sphere);
 // 		view.setRenderer(renderer); 
  		
