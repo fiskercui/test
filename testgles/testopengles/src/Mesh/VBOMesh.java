@@ -49,6 +49,7 @@ public class VBOMesh {
 		GLES20.glBindBuffer(GLES20.GL_ARRAY_BUFFER, colorBufferHandle);
 		GLES20.glBufferData(GLES20.GL_ARRAY_BUFFER, floatSize * 9, colorBuffer, GLES20.GL_STATIC_DRAW);
 		
+		
 //		GLES10.
 //		GLES20.glGenVertexArrays(1, &vaoHandle);
 		
