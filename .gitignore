@@ -6,3 +6,7 @@
 /testcpp/a.out
 /testcpp/a.out.dSYM/
 /testgles/testopengles/gen/
+/testgles/NdkOpenGL/bin/
+/testgles/NdkOpenGL/obj/
+/testgles/san-angeles/obj/
+/testgles/san-angeles/bin/
