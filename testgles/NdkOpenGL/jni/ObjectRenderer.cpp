@@ -3,6 +3,7 @@
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 #include "importgl.h"
+#include "math/Mat4.h"
 
 #include "ObjectRenderer.h"
 #include "TestObject.h"
