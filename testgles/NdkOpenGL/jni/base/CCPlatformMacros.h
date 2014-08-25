@@ -32,6 +32,7 @@ Copyright (c) 2013-2014 Chukong Technologies
 #include "base/CCPlatformConfig.h"
 #include "base/CCPlatformDefine.h"
 
+
 /**
  * define a create function for a specific type, such as Layer
  * @param \__TYPE__  class type to add create(), such as Layer
@@ -207,6 +208,7 @@ public: virtual void set##funName(varType var)   \
 
 #define __CCLOGWITHFUNCTION(s, ...) \
     log("%s : %s",__FUNCTION__, StringUtils::format(s, ##__VA_ARGS__).c_str())
+
 
 // cocos2d debug
 #if !defined(COCOS2D_DEBUG) || COCOS2D_DEBUG == 0

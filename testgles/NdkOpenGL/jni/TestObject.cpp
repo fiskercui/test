@@ -1,11 +1,17 @@
 //#include <GLES/gl.h>
 //EGL/egl.h exists since android 2.3
-//#include <EGL/egl.h>
+#include <EGL/egl.h>
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 #include "importgl.h"
+#include "base/ccMacros.h"
+#include "math/CCGeometry.h"
+#include "math/Mat4.h"
+#include "base/CCGL.h"
+#include "renderer/CCGLProgram.h"
 
 #include "TestObject.h"
+#include "ObjectRenderer.h"
 
 unsigned int vbo[2];
 float positions[12] = {1,-1,0, 1,1,0, -1,-1,0, -1,1,0};
@@ -44,9 +50,19 @@ void TestObject::init()
 
 void TestObject::draw()
 {
+//	glClearColor (0,0,1,1);
+//	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//	ObjectRenderer::getInstance()->pushMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+//	ObjectRenderer::getInstance()->loadIdentityMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
+//	glBindBuffer    (GL_ARRAY_BUFFER, vbo[0]);
+////	glVertexPointer (3, GL_FLOAT, 0, 0);
+//	 glVertexAttribPointer(GLProgram::VERTEX_ATTRIB_POSITION, 3, GL_FLOAT, GL_FALSE, 0, 0);
+//	 glBindBuffer    (GL_ELEMENT_ARRAY_BUFFER, vbo[1]);
+//	 glDrawElements  (GL_TRIANGLE_STRIP, 4, GL_UNSIGNED_SHORT, 0);
+//	ObjectRenderer::getInstance()->popMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);
 	//启用顶点设置功能，之后必须要关闭功能
 	glEnableClientState (GL_VERTEX_ARRAY);
-	//清屏
+//	清屏
 	glClearColor (0,0,1,1);
 	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode (GL_MODELVIEW);
@@ -57,6 +73,6 @@ void TestObject::draw()
 	glBindBuffer    (GL_ELEMENT_ARRAY_BUFFER, vbo[1]);
 	//按照参数给定的值绘制图形
 	glDrawElements  (GL_TRIANGLE_STRIP, 4, GL_UNSIGNED_SHORT, 0);
-	//关闭顶点设置功能
+//	关闭顶点设置功能
 	glDisableClientState(GL_VERTEX_ARRAY);
 }

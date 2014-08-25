@@ -9,7 +9,7 @@ LOCAL_CFLAGS := -DANDROID_NDK \
                 
 LOCAL_MODULE    := NdkGLRenderer
 LOCAL_SRC_FILES := \
-     importgl.c \
+	 importgl.c \
 	 NdkOpenGL.cpp \
 	 ObjectRenderer.cpp \
 	 TestObject.cpp \
@@ -30,21 +30,30 @@ LOCAL_SRC_FILES := \
 	 math/Vec2.inl \
 	 math/Vec3.inl \
 	 math/Vec4.inl \
+	 base/CCRef.cpp \
+	 base/ccTypes.cpp \
+	 base/CCGLViewProtocol.cpp \
+	 base/CCGLView.cpp \
+	 base/CCAutoreleasePool.cpp \
+	 base/CCLog.cpp \
+#	 renderer/CCGLProgram.cpp \
+	 
 	 
 LOCAL_C_INCLUDES := $(LOCAL_PATH) \
                     $(LOCAL_PATH)/. \
 #LOCAL_LDLIBS := -lGLESv1_CM
 
-LOCAL_LDLIBS := -lGLESv1_CM \
+#LOCAL_LDLIBS := -lGLESv1_CM \
 				-ldl \
                 -llog \
                 -lz \
                 -landroid
-#LOCAL_LDLIBS := -lGLESv2 \
+LOCAL_LDLIBS := -lGLESv1_CM \
+                -lGLESv2 \
+                -lEGL \
                 -llog \
                 -lz \
                 -landroid
-
 #LOCAL_EXPORT_LDLIBS := -lGLESv2 \
                        -llog \
                        -lz \

@@ -32,9 +32,9 @@ THE SOFTWARE.
 #define _USE_MATH_DEFINES
 #endif
 
-#include "base/CCConsole.h"
+//#include "base/CCConsole.h"
 #include "CCStdC.h"
-
+#include "base/CCLog.h"
 #ifndef CCASSERT
 #if COCOS2D_DEBUG > 0
     #if CC_ENABLE_SCRIPT_BINDING

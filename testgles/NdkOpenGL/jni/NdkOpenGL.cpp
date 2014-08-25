@@ -7,7 +7,8 @@ extern "C"
 
 	JNIEXPORT void JNICALL Java_com_example_ndkopengl_NdkGlRender_onNdkSurfaceCreated (JNIEnv* env, jobject obj)
 	{
-//		importGLInit();
+		printf("initGLINit");
+		importGLInit();
 		ObjectRenderer* render = ObjectRenderer::getInstance();
 		ObjectRenderer::getInstance()->onSurfaceCreated();
 	}
