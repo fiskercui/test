@@ -8,10 +8,10 @@ import java.nio.ShortBuffer;
 import javax.microedition.khronos.opengles.GL10;
 
 public class Square {
-	private float vertices[] = { -1.0f, 1.0f, 0.0f, // 0, Top Left
-			-1.0f, -1.0f, 0.0f, // 1, Bottom Left
-			1.0f, -1.0f, 0.0f, // 2, Bottom Right
-			1.0f, 1.0f, 0.0f, // 3, Top Right
+	private float vertices[] = { -100.0f, 100.0f, 0.0f, // 0, Top Left
+			-100.0f, -100.0f, 0.0f, // 1, Bottom Left
+			100.0f, -100.0f, 0.0f, // 2, Bottom Right
+			100.0f, 100.0f, 0.0f, // 3, Top Right
 	};
 	// The order we like to connect them.
 	private short[] indices = { 0, 1, 2, 0, 2, 3 };

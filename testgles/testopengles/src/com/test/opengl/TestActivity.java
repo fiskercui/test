@@ -5,6 +5,7 @@ import Mesh.Cube;
 import Mesh.MeshRenderer;
 import Mesh.SimplePlane;
 import Mesh.Sphere;
+import Square.SquareRenderer;
 import android.app.Activity;
 import android.graphics.BitmapFactory;
 import android.opengl.GLSurfaceView;
@@ -23,7 +24,7 @@ public class TestActivity extends Activity {
 
  		GLSurfaceView view = new GLSurfaceView(this);
 
- 		//   		view.setRenderer(new SquareRenderer());
+ 		   		view.setRenderer(new SquareRenderer());
 
 
 // 		SimplePlane plane = new SimplePlane(1, 1);
@@ -46,8 +47,9 @@ public class TestActivity extends Activity {
 // 		renderer.AddMesh(sphere);
 // 		view.setRenderer(renderer); 
  		
- 		LightRenderer lightrender = new LightRenderer();
- 		view.setRenderer(lightrender);
+ 		   		//light
+// 		LightRenderer lightrender = new LightRenderer();
+// 		view.setRenderer(lightrender);
 
 
    		setContentView(view);

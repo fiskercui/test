@@ -50,7 +50,12 @@ public class SquareRenderer implements Renderer {
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | // OpenGL docs.
                            GL10.GL_DEPTH_BUFFER_BIT);
 		gl.glLoadIdentity();
-		gl.glTranslatef(0,0,-10);
+		int width = 960,height = 640;
+		float zeye = 640/1.1566f;
+		GLU.gluLookAt(gl, width/2, height/2, zeye,  width/3, height/2, 0f, 0.0f, 1.0f, 0.0f);
+//		GLU.gluLookAt(gl, 7.5, 7.5, 12.5,  2.5, 2.5, -5.0, 0.0, 1.0, 0.0);
+//		GLU.gluLookAt(gl, width/2, height/2, zeye, width/2, height/2, 0.0f, 0.0f, 1.0f, 0.0f);
+//		gl.glTranslatef(0,0,-10);
 		
 		gl.glPushMatrix();
 		gl.glRotatef(angle, 0 , 0, 1);
@@ -99,20 +104,57 @@ public class SquareRenderer implements Renderer {
          * microedition.khronos.opengles.GL10, int, int)
 	 */
 	public void onSurfaceChanged(GL10 gl, int width, int height) {
+		
+//		glViewport (0,0, 960, 640);
+//	    Size size(960,640);
+//	    float zeye = 640/1.1566f;
+//
+//	    Mat4 matrixPerspective, matrixLookup;
+//
+//	    loadIdentityMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION);
+//
+//	#if CC_TARGET_PLATFORM == CC_PLATFORM_WP8
+//	    //if needed, we need to add a rotation for Landscape orientations on Windows Phone 8 since it is always in Portrait Mode
+//	    GLView* view = getOpenGLView();
+//	    if(getOpenGLView() != nullptr)
+//	    {
+//	        multiplyMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, getOpenGLView()->getOrientationMatrix());
+//	    }
+//	#endif
+//	    // issue #1334
+//	    Mat4::createPerspective(60, (GLfloat)size.width/size.height, 1, zeye+size.height/2, &matrixPerspective);
+//
+//	    multiplyMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, matrixPerspective);
+//
+//	    Vec3 eye(size.width/2, size.height/2, zeye), center(size.width/2, size.height/2, 0.0f), up(0.0f, 1.0f, 0.0f);
+//	    Mat4::createLookAt(eye, center, up, &matrixLookup);
+//	    multiplyMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, matrixLookup);
+//
+//	    loadIdentityMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);		
+		
+		float zeye = 640/1.1566f;
 		// Sets the current view port to the new size.
 		gl.glViewport(0, 0, width, height);// OpenGL docs.
-		gl.glOrthox(0, 0, width, height, -2, 100);
+//		gl.glOrthox(0, 0, width, height, -2, 100);
+
 		// Select the projection matrix
 		gl.glMatrixMode(GL10.GL_PROJECTION);// OpenGL docs.
 		// Reset the projection matrix
 		gl.glLoadIdentity();// OpenGL docs.
 		// Calculate the aspect ratio of the window
-		GLU.gluPerspective(gl, 45.0f,
+		
+//		GLU.gluPerspective(gl, 45.0f,
+//                (float) width / (float) height,
+//                0.1f, 100.0f);
+		GLU.gluPerspective(gl, 90.0f,
                                    (float) width / (float) height,
-                                   0.1f, 100.0f);
+                                   0.1f, 800);
+//		GLU.gluLookAt(gl, width/2, height/2, zeye, width/2, height/2, 0.0f, 0.0f, 1.0f, 0.0f);
 		// Select the modelview matrix
 		gl.glMatrixMode(GL10.GL_MODELVIEW);// OpenGL docs.
 		// Reset the modelview matrix
+
 		gl.glLoadIdentity();// OpenGL docs.
+//		GLU.gluLookAt(gl, width/2+300, height/2+100, zeye, width/2+300, height/2+100, 0.0f, 0.0f, 1.0f, 0.0f);
 	}
 }

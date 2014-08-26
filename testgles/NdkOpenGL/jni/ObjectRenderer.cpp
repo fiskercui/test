@@ -12,6 +12,20 @@
 #include "ObjectRenderer.h"
 #include "TestObject.h"
 
+void xgluPerspective( float fovy, float aspect, float near_clip, float far_clip )
+{
+    const double PI = 3.1415926;
+    double TWOPI_OVER_360 = 2.0 * PI / 360.0;
+    float half_height = near_clip * (float)tan( fovy * 0.5 * TWOPI_OVER_360 );
+    float half_width = half_height * aspect;
+
+#ifdef WIN32
+    glFrustum( -half_width, half_width, -half_height, half_height, near_clip, far_clip );
+#elif defined(CK_ANDROID)
+    glFrustumf( -half_width, half_width, -half_height, half_height, near_clip, far_clip );
+#endif
+}
+
 
 ObjectRenderer* ObjectRenderer::s_render = nullptr;
 
@@ -186,8 +200,9 @@ Mat4 ObjectRenderer::getMatrix(MATRIX_STACK_TYPE type)
 
 void ObjectRenderer::setupProjection()
 {
-    Size size(4,4);
-    float zeye = 553;
+	glViewport (0,0, 960, 640);
+    Size size(960,640);
+    float zeye = 640/1.1566f;
 
     Mat4 matrixPerspective, matrixLookup;
 
@@ -202,7 +217,7 @@ void ObjectRenderer::setupProjection()
     }
 #endif
     // issue #1334
-    Mat4::createPerspective(60, (GLfloat)size.width/size.height, 10, zeye+size.height/2, &matrixPerspective);
+    Mat4::createPerspective(60, (GLfloat)size.width/size.height, 1, zeye+size.height/2, &matrixPerspective);
 
     multiplyMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, matrixPerspective);
 
@@ -231,7 +246,14 @@ void ObjectRenderer::onSurfaceChanged(int width, int height)
 	glMatrixMode   (GL_PROJECTION);
 	//将当前的矩阵设置为glMatrixMode指定的矩阵
 	glLoadIdentity ();
-	glOrthof(-2, 2, -2, 2, -2, 2);
+
+    Size size(960,640);
+    float zeye = 640/1.1566f;
+    xgluPerspective(60, (GLfloat)size.width/size.height, 1, zeye+size.height/2);
+//    xgluLookAt(size.width/2, size.height/2, zeye, size.width/2, size.height/2, 0.0f, 0.0f, 1.0f, 0.0f);
+//    Vec3 eye(size.width/2, size.height/2, zeye), center(size.width/2, size.height/2, 0.0f), up(0.0f, 1.0f, 0.0f);
+//    glLookAt()
+//	glOrthof(-2, 2, -2, 2, -2, 2);
 
 	CCLOGINFO("width:%d, height:%d", width, height);
 //	setupProjection();

@@ -14,7 +14,7 @@
 #include "ObjectRenderer.h"
 
 unsigned int vbo[2];
-float positions[12] = {1,-1,0, 1,1,0, -1,-1,0, -1,1,0};
+float positions[12] = {100,-100,0, 100,100,0, -100,-100,0, -100,100,0};
 short indices  [4]  = {0,1,2,3};
 TestObject::TestObject()
 {
@@ -35,7 +35,8 @@ void TestObject::init()
     if (grey > 1.0f) {
         grey = 0.0f;
     }
-    glClearColor(grey, grey, grey, 1.0f);
+//    glClearColor(grey, grey, grey, 1.0f);
+    glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
 	//生成两个缓存区对象
 	glGenBuffers (2, vbo);
 	//绑定第一个缓存对象
@@ -63,7 +64,7 @@ void TestObject::draw()
 	//启用顶点设置功能，之后必须要关闭功能
 	glEnableClientState (GL_VERTEX_ARRAY);
 //	清屏
-	glClearColor (0,0,1,1);
+	glClearColor (1,0,0,1);
 	glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode (GL_MODELVIEW);
 	glLoadIdentity ();
