@@ -5,7 +5,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 #LOCAL_CFLAGS := -DANDROID_NDK
 LOCAL_CFLAGS := -DANDROID_NDK \
-                -DDISABLE_IMPORTGL
+                -DDISABLE_IMPORTGL \
                 
 LOCAL_MODULE    := NdkGLRenderer
 LOCAL_SRC_FILES := \
@@ -41,13 +41,7 @@ LOCAL_SRC_FILES := \
 	 
 LOCAL_C_INCLUDES := $(LOCAL_PATH) \
                     $(LOCAL_PATH)/. \
-#LOCAL_LDLIBS := -lGLESv1_CM
 
-#LOCAL_LDLIBS := -lGLESv1_CM \
-				-ldl \
-                -llog \
-                -lz \
-                -landroid
 LOCAL_LDLIBS := -lGLESv1_CM \
                 -lGLESv2 \
                 -lEGL \
@@ -57,6 +51,6 @@ LOCAL_LDLIBS := -lGLESv1_CM \
 #LOCAL_EXPORT_LDLIBS := -lGLESv2 \
                        -llog \
                        -lz \
-                       -landroid              
-              
+                       -landroid
+                                    
 include $(BUILD_SHARED_LIBRARY)
