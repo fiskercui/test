@@ -26,7 +26,19 @@ public class NdkGlRender implements Renderer {
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig arg1) {
 		// TODO Auto-generated method stub
-		onNdkSurfaceCreated();
+		try {
+			Thread.sleep(2000);
+			onNdkSurfaceCreated();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	void setWidthAndHeight(int width, int height)
+	{
+//		onNdkSurfaceChanged(width, height);
 	}
 
 }

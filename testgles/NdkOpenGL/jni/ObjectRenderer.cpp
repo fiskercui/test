@@ -11,6 +11,7 @@
 
 #include "ObjectRenderer.h"
 #include "TestObject.h"
+#include "TestShader.h"
 
 void xgluPerspective( float fovy, float aspect, float near_clip, float far_clip )
 {
@@ -29,14 +30,21 @@ void xgluPerspective( float fovy, float aspect, float near_clip, float far_clip 
 
 ObjectRenderer* ObjectRenderer::s_render = nullptr;
 
-TestObject* object = new TestObject();
+//TestObject* object = new TestObject();
+ShaderObject* object = new ShaderObject();
 ObjectRenderer::ObjectRenderer()
 {
-
+	_openGLView = GLView::create("glview");
 }
 
 ObjectRenderer::~ObjectRenderer()
 {
+    if (_openGLView)
+    {
+        _openGLView->end();
+        _openGLView = nullptr;
+    }
+
 }
 
 void ObjectRenderer::initMatrixStack()

@@ -20,7 +20,7 @@ public class SquareRenderer implements Renderer {
 	
 	public FlatColoredSquare square = new FlatColoredSquare();
 	public float angle = 30.0f;
-	
+	private int width = 960, height = 640;
 	
 	public void onSurfaceCreated(GL10 gl, EGLConfig config) {
 		// Set the background color to black ( rgba ).
@@ -50,9 +50,9 @@ public class SquareRenderer implements Renderer {
 		gl.glClear(GL10.GL_COLOR_BUFFER_BIT | // OpenGL docs.
                            GL10.GL_DEPTH_BUFFER_BIT);
 		gl.glLoadIdentity();
-		int width = 960,height = 640;
-		float zeye = 640/1.1566f;
-		GLU.gluLookAt(gl, width/2, height/2, zeye,  width/3, height/2, 0f, 0.0f, 1.0f, 0.0f);
+//		int width = 960,height = 640;
+		float zeye = height/1.1566f;
+		GLU.gluLookAt(gl, width/2, height/2, zeye,  width/2, height/2, 0f, 0.0f, 1.0f, 0.0f);
 //		GLU.gluLookAt(gl, 7.5, 7.5, 12.5,  2.5, 2.5, -5.0, 0.0, 1.0, 0.0);
 //		GLU.gluLookAt(gl, width/2, height/2, zeye, width/2, height/2, 0.0f, 0.0f, 1.0f, 0.0f);
 //		gl.glTranslatef(0,0,-10);
@@ -131,8 +131,10 @@ public class SquareRenderer implements Renderer {
 //	    multiplyMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_PROJECTION, matrixLookup);
 //
 //	    loadIdentityMatrix(MATRIX_STACK_TYPE::MATRIX_STACK_MODELVIEW);		
+		this.width = width;
+		this.height = height;
 		
-		float zeye = 640/1.1566f;
+		float zeye = height/1.1566f;
 		// Sets the current view port to the new size.
 		gl.glViewport(0, 0, width, height);// OpenGL docs.
 //		gl.glOrthox(0, 0, width, height, -2, 100);
@@ -146,9 +148,9 @@ public class SquareRenderer implements Renderer {
 //		GLU.gluPerspective(gl, 45.0f,
 //                (float) width / (float) height,
 //                0.1f, 100.0f);
-		GLU.gluPerspective(gl, 90.0f,
+		GLU.gluPerspective(gl, 60.0f,
                                    (float) width / (float) height,
-                                   0.1f, 800);
+                                   10f, zeye + height/2);
 //		GLU.gluLookAt(gl, width/2, height/2, zeye, width/2, height/2, 0.0f, 0.0f, 1.0f, 0.0f);
 		// Select the modelview matrix
 		gl.glMatrixMode(GL10.GL_MODELVIEW);// OpenGL docs.

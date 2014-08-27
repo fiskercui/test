@@ -1,5 +1,6 @@
 #include <stack>
 #include "math/Mat4.h"
+#include "base/CCGLView.h"
 
 using namespace cocos2d;
 
@@ -26,6 +27,11 @@ public:
 
 protected:
 	static ObjectRenderer* s_render;
+
+
+protected:
+    /* The GLView, where everything is rendered */
+    GLView *_openGLView;
 	/* data */
 private:
     std::stack<Mat4> _modelViewMatrixStack;

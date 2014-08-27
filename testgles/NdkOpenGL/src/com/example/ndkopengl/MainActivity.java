@@ -13,9 +13,10 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 //		setContentView(R.layout.activity_main);
 		
-		GLSurfaceView surface = new GLSurfaceView(this);    
-        surface.setRenderer(new NdkGlRender());    
-        setContentView(surface);   
+		Cocos2dxGLSurfaceView glview = new Cocos2dxGLSurfaceView(this);    
+//        surface.setEGLContextClientVersion(2);
+		glview.setCocos2dxRenderer(new NdkGlRender());    
+        setContentView(glview);   
 	}
 	
 	

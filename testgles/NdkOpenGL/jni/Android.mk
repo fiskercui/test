@@ -36,6 +36,8 @@ LOCAL_SRC_FILES := \
 	 base/CCGLView.cpp \
 	 base/CCAutoreleasePool.cpp \
 	 base/CCLog.cpp \
+	 TestShader.cpp \
+	 LoadShaders.cpp \
 #	 renderer/CCGLProgram.cpp \
 	 
 	 
