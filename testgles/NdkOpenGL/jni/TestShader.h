@@ -2,6 +2,6 @@
 class ShaderObject
 {
 public:
-	void init();
+	void init(int width, int height);
 	void draw();
 };

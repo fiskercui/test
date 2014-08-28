@@ -34,7 +34,7 @@ ObjectRenderer* ObjectRenderer::s_render = nullptr;
 ShaderObject* object = new ShaderObject();
 ObjectRenderer::ObjectRenderer()
 {
-	_openGLView = GLView::create("glview");
+
 }
 
 ObjectRenderer::~ObjectRenderer()
@@ -238,13 +238,13 @@ void ObjectRenderer::setupProjection()
 
 void ObjectRenderer::onDrawFrame()
 {
-	object->draw();
+//	object->draw();
 }
 
 void ObjectRenderer::onSurfaceCreated()
 {
     initMatrixStack();
-	object->init();
+//	object->init();
 }
 
 void ObjectRenderer::onSurfaceChanged(int width, int height)

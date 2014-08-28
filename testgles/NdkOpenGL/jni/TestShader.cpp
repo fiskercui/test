@@ -1,12 +1,20 @@
 #include "TestShader.h"
 #include "LoadShaders.h"
 #include <stdio.h>
+#include <android/log.h>
 
 #include <EGL/egl.h>
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 
+
+
 #include "base/CCGL.h"
+
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
+//#define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR,LOG_TAG,__VA_ARGS__)
+
+
 #define BUFFER_OFFSET(x)  ((const void*) (x))
 
 enum VAO_IDs { Triangles, NumVAOs };
@@ -17,12 +25,11 @@ GLuint  Buffers[NumBuffers];
 
 const GLuint NumVertices = 6;
 
-void ShaderObject::init()
+
+
+void ShaderObject::init(int width, int height)
 {
-	for(int i = 0; i< 100000; i++)
-	{
-		printf("%d",i);
-	}
+    glViewport(0, 0, width, height);
 	glGenVertexArrays(NumVAOs, VAOs);
 	glBindVertexArray(VAOs[Triangles]);
 	GLfloat  vertices[NumVertices][2] = {

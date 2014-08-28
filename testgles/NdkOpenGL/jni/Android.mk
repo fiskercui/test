@@ -38,6 +38,7 @@ LOCAL_SRC_FILES := \
 	 base/CCLog.cpp \
 	 TestShader.cpp \
 	 LoadShaders.cpp \
+	 ShaderRenderer.cpp \
 #	 renderer/CCGLProgram.cpp \
 	 
 	 
