@@ -35,6 +35,12 @@ static const int MAX_LOG_LENGTH = 16*1024;
 
 void CC_DLL log(const char * format, ...) CC_FORMAT_PRINTF(1, 2);
 
+
+#define  LOG_TAG    "libgl2jni"
+#define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
+
+
+
 NS_CC_END
 
 #endif /* __CCGLVIEWPROTOCOL_H__ */

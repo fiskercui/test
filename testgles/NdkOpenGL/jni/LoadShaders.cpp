@@ -11,7 +11,11 @@
 #include <GLES2/gl2ext.h>
 //#define GLEW_STATIC
 //#include <GL/glew.h>
+#include "base/CCLog.h"
 #include "LoadShaders.h"
+#include "base/CCPlatformMacros.h"
+
+USING_NS_CC;
 
 #ifdef __cplusplus
 extern "C" {
@@ -67,11 +71,11 @@ LoadShaders( ShaderInfo* shaders )
 
         const GLchar* source = ReadShader( entry->filename );
         if ( source == NULL ) {
+        	LOGI("load shader filename %s is null", entry->filename);
             for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
                 glDeleteShader( entry->shader );
                 entry->shader = 0;
             }
-
             return 0;
         }
 

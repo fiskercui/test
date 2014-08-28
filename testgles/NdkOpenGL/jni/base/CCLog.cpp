@@ -22,7 +22,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ****************************************************************************/
-
+#include <android/log.h>
 #include "base/CCLog.h"
 
 //#include "base/CCTouch.h"
@@ -73,6 +73,7 @@ void log(const char * format, ...)
     _log(format, args);
     va_end(args);
 }
+
 
 
 NS_CC_END
