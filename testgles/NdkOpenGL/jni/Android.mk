@@ -10,7 +10,6 @@ LOCAL_CFLAGS := -DANDROID_NDK \
 LOCAL_MODULE    := NdkGLRenderer
 LOCAL_SRC_FILES := \
 	 importgl.c \
-	 NdkOpenGL.cpp \
 	 ObjectRenderer.cpp \
 	 TestObject.cpp \
 	 math/CCAffineTransform.cpp \
@@ -36,6 +35,11 @@ LOCAL_SRC_FILES := \
 	 base/CCGLView.cpp \
 	 base/CCAutoreleasePool.cpp \
 	 base/CCLog.cpp \
+	 help/JniHelper.cpp \
+	 help/Java_com_example_ndkopengl_Cocos2dxHelper.cpp \
+	 help/NdkOpenGL.cpp \
+	 platform/CCFileUtilsAndroid.cpp \
+	 platform/CCFileUtils.cpp \
 	 TestShader.cpp \
 	 LoadShaders.cpp \
 	 ShaderRenderer.cpp \
