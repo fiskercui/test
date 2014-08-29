@@ -15,6 +15,8 @@
 #include "LoadShaders.h"
 #include "base/CCPlatformMacros.h"
 
+#include "platform/CCFileUtils.h"
+
 USING_NS_CC;
 
 #ifdef __cplusplus

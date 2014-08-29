@@ -53,9 +53,8 @@ extern "C" {
     }
 
     JNIEXPORT void JNICALL Java_com_example_ndkopengl_Cocos2dxHelper_nativeSetContext(JNIEnv*  env, jobject thiz, jobject context, jobject assetManager) {
-//        JniHelper::setClassLoaderFrom(context);
-//        FileUtilsAndroid::setassetmanager(AAssetManager_fromJava(env, assetManager));
-
+        JniHelper::setClassLoaderFrom(context);
+        FileUtilsAndroid::setassetmanager(AAssetManager_fromJava(env, assetManager));
         return ;
     }
 
