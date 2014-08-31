@@ -71,8 +71,19 @@ LoadShaders( ShaderInfo* shaders )
 
         entry->shader = shader;
 
-        const GLchar* source = ReadShader( entry->filename );
-        if ( source == NULL ) {
+//        const GLchar* source = ReadShader( entry->filename );
+//        if ( source == NULL ) {
+//        	LOGI("load shader filename %s is null", entry->filename);
+//            for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
+//                glDeleteShader( entry->shader );
+//                entry->shader = 0;
+//            }
+//            return 0;
+//        }
+
+        const char* source = FileUtils::getInstance()->getStringFromFile(entry->filename).c_str();
+        if (source == NULL)
+        {
         	LOGI("load shader filename %s is null", entry->filename);
             for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
                 glDeleteShader( entry->shader );
@@ -80,9 +91,8 @@ LoadShaders( ShaderInfo* shaders )
             }
             return 0;
         }
-
         glShaderSource( shader, 1, &source, NULL );
-        delete [] source;
+//        delete [] source;
 
         glCompileShader( shader );
 

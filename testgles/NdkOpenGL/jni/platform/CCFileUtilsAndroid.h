@@ -38,7 +38,7 @@ public:
     /**
      *  Gets string from a file.
      */
-    virtual std::string getStringFromFile(const std::string& filename);
+    virtual std::string getStringFromFile(const std::string& filename) override;
 
     virtual std::string getWritablePath() const;
     virtual bool isAbsolutePath(const std::string& strPath) const;
