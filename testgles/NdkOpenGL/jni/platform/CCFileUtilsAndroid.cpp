@@ -223,6 +223,7 @@ std::string FileUtilsAndroid::getData(const std::string& filename, bool forStrin
     {
 //        ret.fastSet(data, size);
     	std::string ret((char*)data, (int)size);
+    	CCLOG("file data:%s", data);
     	return ret;
     }
 

@@ -31,8 +31,8 @@ static void checkGlError(const char* op) {
 
 #define BUFFER_OFFSET(x)  ((const void*) (x))
 
-enum VAO_IDs { Triangles, NumVAOs };
-enum Buffer_IDs { ArrayBuffer, NumBuffers };
+enum VAO_IDs { Triangles, Triangles2, NumVAOs };
+enum Buffer_IDs { ArrayBuffer, ArrayBuffer2,NumBuffers };
 enum Attrib_IDs { vPosition = 0 };
 GLuint  VAOs[NumVAOs];
 GLuint  Buffers[NumBuffers];
@@ -40,6 +40,10 @@ GLuint  Buffers[NumBuffers];
 const GLuint NumVertices = 6;
 
 
+GLuint program;
+static GLuint gvPositionHandle;
+const GLfloat gTriangleVertices[] = { 0.0f, 0.5f, -0.5f, -0.5f,
+        0.5f, -0.5f };
 
 void ShaderObject::init(int width, int height)
 {
@@ -51,22 +55,19 @@ void ShaderObject::init(int width, int height)
     LOGI("NumVAOS = %d", NumVAOs);
     LOGI("NumBuffers = %d", NumBuffers);
 
-    LOGI("setupGraphics(%d, %d)", width, height);
+    LOGI("setupGraphics(%d, %d)", width*2, height*2);
+
 
 	glGenVertexArrays(NumVAOs, VAOs);
 	glBindVertexArray(VAOs[Triangles]);
-//	GLfloat  vertices[NumVertices][2] = {
-//		{ -0.90, -0.90 },  // Triangle 1
-//		{  0.85, -0.90 },
-//		{ -0.90,  0.85 },
-//		{  0.90, -0.85 },  // Triangle 2
-//		{  0.90,  0.90 },
-//		{ -0.85,  0.90 }
-//	};
-	GLfloat vertices[3][2] = {
-		{ -1, 1 },  // Triangle 1
-		{  1, 2 },
-		{ 1, 1 },
+
+	GLfloat vertices[NumVertices][2] = {
+		{ -0.90f, -.90f },  // Triangle 1
+		{  0.85f, -0.90f },
+		{ -0.90f, 0.85f },
+		{  0.90, -0.85 },  // Triangle 2
+		{  0.90,  0.90 },
+		{ -0.85,  0.90 },
 	};
 	glGenBuffers(NumBuffers, Buffers);
 	glBindBuffer(GL_ARRAY_BUFFER, Buffers[ArrayBuffer]);
@@ -76,7 +77,7 @@ void ShaderObject::init(int width, int height)
 		{ GL_FRAGMENT_SHADER, "triangles.frag" },
 		{ GL_NONE, NULL }
 	};
-	GLuint program = LoadShaders(shaders);
+	program = LoadShaders(shaders);
 	glUseProgram(program);
 	glVertexAttribPointer(vPosition, 2, GL_FLOAT,
 	                  GL_FALSE, 0, BUFFER_OFFSET(0));
@@ -86,18 +87,50 @@ void ShaderObject::init(int width, int height)
     LOGI("vPosition(\"vPosition\") = %d\n",
     		vPosition);
 
-    GLuint gvPositionHandle;
+
     gvPositionHandle = glGetAttribLocation(program, "vPosition");
     checkGlError("glGetAttribLocation");
     LOGI("glGetAttribLocation(\"vPosition\") = %d\n",
             gvPositionHandle);
+    glViewport(0, 0, width, height);
 }
 
 void ShaderObject::draw()
 {
-	glClearColor(1.0f, 1.0f, 0.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
+	static float grey;
+	grey += 0.01f;
+	if (grey > 1.0f) {
+		grey = 0.0f;
+	}
+	glClearColor(grey, grey, grey, 1.0f);
+	checkGlError("glClearColor");
+	glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+	checkGlError("glClear");
+
+	glUseProgram(program);
+	checkGlError("glUseProgram");
+
     glBindVertexArray(VAOs[Triangles]);
     glDrawArrays(GL_TRIANGLES, 0, NumVertices);
+
+//	static float grey;
+//	grey += 0.01f;
+//	if (grey > 1.0f) {
+//		grey = 0.0f;
+//	}
+//	glClearColor(grey, grey, grey, 1.0f);
+//	checkGlError("glClearColor");
+//	glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+//	checkGlError("glClear");
+//
+//	glUseProgram(program);
+//	checkGlError("glUseProgram");
+
+//	glVertexAttribPointer(gvPositionHandle, 2, GL_FLOAT, GL_FALSE, 0, gTriangleVertices);
+//	checkGlError("glVertexAttribPointer");
+//	glEnableVertexAttribArray(gvPositionHandle);
+//	checkGlError("glEnableVertexAttribArray");
+//	glDrawArrays(GL_TRIANGLES, 0, 3);
+//	checkGlError("glDrawArrays");
 
 }

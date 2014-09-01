@@ -58,6 +58,13 @@ ReadShader( const char* filename )
 
 //----------------------------------------------------------------------------
 
+
+static const char gVertexShader[] =
+    "attribute vec4 vPosition;\n"
+    "void main() {\n"
+    "  gl_Position = vPosition;\n"
+    "}\n";
+
 GLuint
 LoadShaders( ShaderInfo* shaders )
 {
@@ -81,8 +88,8 @@ LoadShaders( ShaderInfo* shaders )
 //            return 0;
 //        }
 
-        const char* source = FileUtils::getInstance()->getStringFromFile(entry->filename).c_str();
-        if (source == NULL)
+        std::string source = FileUtils::getInstance()->getStringFromFile(entry->filename).c_str();
+        if (source == "")
         {
         	LOGI("load shader filename %s is null", entry->filename);
             for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
@@ -91,7 +98,12 @@ LoadShaders( ShaderInfo* shaders )
             }
             return 0;
         }
-        glShaderSource( shader, 1, &source, NULL );
+
+
+//        const char* pSource = gVertexShader;
+        const char* pSource = source.c_str();
+        LOGI("shader source:%s", pSource);
+        glShaderSource( shader, 1, &pSource, NULL );
 //        delete [] source;
 
         glCompileShader( shader );
@@ -108,7 +120,7 @@ LoadShaders( ShaderInfo* shaders )
             std::cerr << "Shader compilation failed: " << log << std::endl;
             delete [] log;
 #endif /* DEBUG */
-
+        	LOGI("glGetShaderiv error %s", entry->filename);
             return 0;
         }
 
@@ -142,7 +154,7 @@ LoadShaders( ShaderInfo* shaders )
             glDeleteShader( entry->shader );
             entry->shader = 0;
         }
-        
+    	LOGI("glGetProgramiv linked error %s", entry->filename);
         return 0;
     }
 
