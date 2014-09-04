@@ -102,7 +102,7 @@ LoadShaders( ShaderInfo* shaders )
 
 //        const char* pSource = gVertexShader;
         const char* pSource = source.c_str();
-        LOGI("shader source:%s", pSource);
+//        LOGI("shader source:%s", pSource);
         glShaderSource( shader, 1, &pSource, NULL );
 //        delete [] source;
 
@@ -111,15 +111,16 @@ LoadShaders( ShaderInfo* shaders )
         GLint compiled;
         glGetShaderiv( shader, GL_COMPILE_STATUS, &compiled );
         if ( !compiled ) {
-#ifdef _DEBUG
+//#ifdef _DEBUG
             GLsizei len;
             glGetShaderiv( shader, GL_INFO_LOG_LENGTH, &len );
 
             GLchar* log = new GLchar[len+1];
             glGetShaderInfoLog( shader, len, &len, log );
-            std::cerr << "Shader compilation failed: " << log << std::endl;
+//            std::cerr << "Shader compilation failed: " << log << std::endl;
+        	LOGI("glGetShaderiv error %s", log);
             delete [] log;
-#endif /* DEBUG */
+//#endif /* DEBUG */
         	LOGI("glGetShaderiv error %s", entry->filename);
             return 0;
         }
@@ -140,7 +141,7 @@ LoadShaders( ShaderInfo* shaders )
     GLint linked;
     glGetProgramiv( program, GL_LINK_STATUS, &linked );
     if ( !linked ) {
-#ifdef _DEBUG
+//#ifdef _DEBUG
         GLsizei len;
         glGetProgramiv( program, GL_INFO_LOG_LENGTH, &len );
 
@@ -148,7 +149,7 @@ LoadShaders( ShaderInfo* shaders )
         glGetProgramInfoLog( program, len, &len, log );
         std::cerr << "Shader linking failed: " << log << std::endl;
         delete [] log;
-#endif /* DEBUG */
+//#endif /* DEBUG */
 
         for ( entry = shaders; entry->type != GL_NONE; ++entry ) {
             glDeleteShader( entry->shader );

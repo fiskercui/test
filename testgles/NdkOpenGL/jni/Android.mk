@@ -43,6 +43,7 @@ LOCAL_SRC_FILES := \
 	 TestShader.cpp \
 	 LoadShaders.cpp \
 	 ShaderRenderer.cpp \
+	 samples/DrawCommandTest.cpp \
 #	 renderer/CCGLProgram.cpp \
 	 
 	 

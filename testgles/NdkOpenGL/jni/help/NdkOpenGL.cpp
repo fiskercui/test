@@ -8,7 +8,7 @@ extern "C"
 
 	JNIEXPORT void JNICALL Java_com_example_ndkopengl_NdkGlRender_onNdkSurfaceCreated (JNIEnv* env, jobject obj)
 	{
-		for(int i = 0; i< 10000; i++)
+		for(int i = 0; i< 1000000; i++)
 		{
 			printf("%d",i);
 		}
