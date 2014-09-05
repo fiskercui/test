@@ -11,7 +11,7 @@
 
 #include "ObjectRenderer.h"
 #include "TestObject.h"
-#include "TestShader.h"
+#include "samples/TestShader.h"
 
 void xgluPerspective( float fovy, float aspect, float near_clip, float far_clip )
 {

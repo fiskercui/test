@@ -27,8 +27,6 @@ static void checkGlError(const char* op) {
     }
 }
 
-
-
 #define BUFFER_OFFSET(x)  ((const void*) (x))
 
 enum VAO_IDs { Triangles, Triangles2, NumVAOs };
@@ -54,13 +52,10 @@ void ShaderObject::init(int width, int height)
 
     LOGI("NumVAOS = %d", NumVAOs);
     LOGI("NumBuffers = %d", NumBuffers);
-
     LOGI("setupGraphics(%d, %d)", width*2, height*2);
-
 
 	glGenVertexArrays(NumVAOs, VAOs);
 	glBindVertexArray(VAOs[Triangles]);
-
 	GLfloat vertices[NumVertices][2] = {
 		{ -0.90f, -.90f },  // Triangle 1
 		{  0.85f, -0.90f },
@@ -83,11 +78,8 @@ void ShaderObject::init(int width, int height)
 	                  GL_FALSE, 0, BUFFER_OFFSET(0));
 	glEnableVertexAttribArray(vPosition);
 
-
     LOGI("vPosition(\"vPosition\") = %d\n",
     		vPosition);
-
-
     gvPositionHandle = glGetAttribLocation(program, "vPosition");
     checkGlError("glGetAttribLocation");
     LOGI("glGetAttribLocation(\"vPosition\") = %d\n",
@@ -132,5 +124,4 @@ void ShaderObject::draw()
 //	checkGlError("glEnableVertexAttribArray");
 //	glDrawArrays(GL_TRIANGLES, 0, 3);
 //	checkGlError("glDrawArrays");
-
 }

@@ -40,9 +40,9 @@ LOCAL_SRC_FILES := \
 	 help/NdkOpenGL.cpp \
 	 platform/CCFileUtilsAndroid.cpp \
 	 platform/CCFileUtils.cpp \
-	 TestShader.cpp \
 	 LoadShaders.cpp \
 	 ShaderRenderer.cpp \
+	 samples/TestShader.cpp \
 	 samples/DrawCommandTest.cpp \
 #	 renderer/CCGLProgram.cpp \
 	 
