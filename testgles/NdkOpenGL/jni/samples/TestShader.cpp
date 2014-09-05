@@ -74,6 +74,16 @@ void ShaderObject::init(int width, int height)
 	};
 	program = LoadShaders(shaders);
 	glUseProgram(program);
+
+	render_model_matrix_loc = glGetUniformLocation(program, "model_matrix");
+	checkGlError("glGetUniformLocation");
+	LOGI("render_model_matrix_loc = %d",render_model_matrix_loc);
+//	LOGI("", );
+	render_projection_matrix_loc = glGetUniformLocation(program, "projection_matrix");
+	checkGlError("glGetUniformLocation");
+	LOGI("render_projection_matrix_loc = %d",render_projection_matrix_loc);
+
+
 	glVertexAttribPointer(vPosition, 2, GL_FLOAT,
 	                  GL_FALSE, 0, BUFFER_OFFSET(0));
 	glEnableVertexAttribArray(vPosition);

@@ -9,8 +9,8 @@
 #include "samples/DrawCommandTest.h"
 
 
-ShaderObject* shaderobject = new ShaderObject();
-//DrawCommandTest* shaderobject = new DrawCommandTest();
+//ShaderObject* shaderobject = new ShaderObject();
+DrawCommandTest* shaderobject = new DrawCommandTest();
 
 ShaderRenderer* ShaderRenderer::s_render = nullptr;
 
