@@ -18,6 +18,7 @@ public:
 	/* data */
 
 protected:
+	int m_index;
 	float aspect;
 
 	GLuint render_prog;

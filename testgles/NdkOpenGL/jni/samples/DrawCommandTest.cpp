@@ -4,7 +4,7 @@
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 
 #include "math/CCGeometry.h"
 #include "math/Mat4.h"
@@ -49,7 +49,7 @@ static void checkGlError(const char* op) {
 //}
 
 
-DrawCommandTest::DrawCommandTest()
+DrawCommandTest::DrawCommandTest():m_index(0)
 {
 
 }
@@ -66,7 +66,7 @@ void DrawCommandTest::init(int width, int height)
     printGLString("Renderer", GL_RENDERER);
     printGLString("Extensions", GL_EXTENSIONS);
 //
-    aspect = width/height;
+    aspect = width*1.0f/height;
     LOGI("setupGraphics(%d, %d)", width*2, height*2);
 //
 //	static const ShaderInfo shader_info[] = {
@@ -83,9 +83,11 @@ void DrawCommandTest::init(int width, int height)
 	glUseProgram(render_prog);
 	render_model_matrix_loc = glGetUniformLocation(render_prog, "model_matrix");
 	checkGlError("glGetUniformLocation");
+	LOGI("render_model_matrix_loc = %d",render_model_matrix_loc);
 //	LOGI("", );
 	render_projection_matrix_loc = glGetUniformLocation(render_prog, "projection_matrix");
 	checkGlError("glGetUniformLocation");
+	LOGI("render_projection_matrix_loc = %d",render_projection_matrix_loc);
 
 	static const GLfloat vertex_positions[] = {
 		 -1.0f, -1.0f, 0.0f, 1.0f,
@@ -127,34 +129,62 @@ void DrawCommandTest::init(int width, int height)
 	glViewport(0,0,width, height);
 }
 
-
-static void printMatrix(float value[], int count)
+#define MAX_LEN 1024
+static char s_temp[MAX_LEN];
+std::string FloatToChar10(float f)
 {
-	char czValue[1024] = {'\0'};
-	for (int i=0; i<count; i++)
-	{
-		itoa(value[count], czValue[count], 1);
-	}
-	 LOGI("GL matrix value  = %s\n", czValue);
+    snprintf(s_temp, MAX_LEN, "%f", f);
+    return (std::string) s_temp;
 }
+
+std::string IntToChar10(int num)
+{
+	snprintf(s_temp, MAX_LEN, "%d", num);
+	return (std::string) s_temp;
+}
+
+std::string FloatArrayToString(float f[], int size)
+{
+	printf("convertFloatArrayToString\n");
+	std::string sTemp;
+	for (int i = 0; i < size; ++i)
+	{
+		sTemp += "[" + IntToChar10(i) + "]:" + FloatToChar10(f[i]) + ",";
+	}
+	return sTemp;
+}
+
+
 void DrawCommandTest::draw()
 {
-//     LOGI("DrawCommandTest Draw");
+//	LOGI("DrawCommandTest Draw:%d",m_index);
 	Mat4 projection_matrix;
     float matrixValue[16];
-
+//
 	Mat4::createPerspective(45, aspect, 1.0f, 500.f, &projection_matrix);
-    memcpy(matrixValue, &projection_matrix, sizeof(projection_matrix));
-    printMatrix(matrixValue, 16);
-	glUniformMatrix4fv(render_projection_matrix_loc, 4, GL_FALSE, matrixValue);
+    memcpy(matrixValue, projection_matrix.m, sizeof(float)*16);
+    if (m_index++ < 10 )
+    {
+		LOGI("render_projection_matrix_loc\n");
+    	LOGI("%s\n", FloatArrayToString(matrixValue, 16).c_str());
+    }
+    glUniformMatrix4fv(render_projection_matrix_loc, 1, GL_FALSE, matrixValue);
+    checkGlError("render_projection_matrix_loc glUniformMatrix4fv");
 
-	 Mat4 model_matrix;
-	 model_matrix.translate(-3.0f, 0.0f, -5.0f);
-     memcpy(matrixValue, &model_matrix, sizeof(matrixValue));
-	 glUniformMatrix4fv(render_model_matrix_loc, 4, GL_FALSE, matrixValue);
-	 checkGlError("glUniformMatrix4fv");
-	 glDrawArrays(GL_TRIANGLES, 0, 3);
-	 checkGlError("checkGlError");
+
+	Mat4 model_matrix;
+	model_matrix.translate(-3.0f, 0.0f, -5.0f);
+	memcpy(matrixValue, model_matrix.m, sizeof(float)*16);
+	if (m_index++ < 10 )
+	{
+		LOGI("render_model_matrix_loc\n");
+		LOGI("%s\n", FloatArrayToString(matrixValue, 16).c_str());
+	}
+	glUniformMatrix4fv(render_model_matrix_loc, 1, GL_FALSE, matrixValue);
+	checkGlError("render_model_matrix_loc glUniformMatrix4fv");
+	glDrawArrays(GL_TRIANGLES, 0, 3);
+	checkGlError("checkGlError");
+
 //	 // DrawElements
 //	 model_matrix.translate(-1.0f, 0.0f, -5.0f);
 //     memcpy(matrixValue, &model_matrix, sizeof(matrixValue));
