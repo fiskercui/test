@@ -1,4 +1,4 @@
-
+require('base.function')
 require('base.class')
 require('base.json')
 -- require('pack')
@@ -10,7 +10,8 @@ local tests = {
 	-- "testserialize",
 	-- "testenv",
 	-- "testtable",
-	"testfunction",
+	"testimport",
+	-- "testfunction",
 	-- "teststring",
 	-- "testjson"
 	-- "testbytearray"
