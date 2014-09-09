@@ -1,0 +1,70 @@
+{
+  "version": "1.0.0.0",
+  "designWidth": 960,
+  "designHeight": 640,
+  "dataScale": 1.0,
+  "textures": [
+    "Test0.plist"
+  ],
+  "texturesPng": [
+    "Test0.png"
+  ],
+  "nodeTree": {
+    "options": {
+      "visible": true,
+      "frameEvent": null,
+      "name": "Node",
+      "classname": "Node"
+    },
+    "children": [
+      {
+        "options": {
+          "backGroundBoxData": {
+            "resourceType": 1,
+            "path": "GUI/selected01.png",
+            "plistFile": ""
+          },
+          "backGroundBoxSelectedData": {
+            "resourceType": 0
+          },
+          "backGroundBoxDisabledData": {
+            "resourceType": 0
+          },
+          "frontCrossData": {
+            "resourceType": 1,
+            "path": "GUI/selected02.png",
+            "plistFile": ""
+          },
+          "frontCrossDisabledData": {
+            "resourceType": 0
+          },
+          "selectedState": true,
+          "x": 270.0,
+          "y": 383.0,
+          "touchAble": true,
+          "visible": true,
+          "classType": "CheckBox",
+          "width": 56.0,
+          "height": 56.0,
+          "positionPercentX": 0.5625,
+          "positionPercentY": 1.196875,
+          "sizePercentX": 0.116666667,
+          "sizePercentY": 0.175,
+          "useMergedTexture": true,
+          "actionTag": 504063946,
+          "tag": 1121,
+          "ignoreSize": true,
+          "name": "CheckBox_4",
+          "classname": "CheckBox"
+        },
+        "children": [],
+        "classname": "CheckBox"
+      }
+    ],
+    "classname": "Node"
+  },
+  "action": {
+    "speed": 1.0,
+    "timelines": []
+  }
+}
