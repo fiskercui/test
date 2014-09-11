@@ -127,6 +127,33 @@ void Mat4::createPerspective(float fieldOfView, float aspectRatio,
     dst->m[14] = -2.0f * zFarPlane * zNearPlane * f_n;
 }
 
+void Mat4::createFrustum(float left, float right, float bottom, float top, float nearZ, float farZ, Mat4* dst)
+{
+    float       deltaX = right - left;
+    float       deltaY = top - bottom;
+    float       deltaZ = farZ - nearZ;
+    Mat4    frust;
+
+    if ( (nearZ <= 0.0f) || (farZ <= 0.0f) ||
+         (deltaX <= 0.0f) || (deltaY <= 0.0f) || (deltaZ <= 0.0f) )
+         return;
+
+    frust.m[0] = 2.0f * nearZ / deltaX;
+    frust.m[1] = frust.m[2] = frust.m[3] = 0.0f;
+
+    frust.m[5] = 2.0f * nearZ / deltaY;
+    frust.m[4] = frust.m[6] = frust.m[9] = 0.0f;
+
+    frust.m[8] = (right + left) / deltaX;
+    frust.m[9] = (top + bottom) / deltaY;
+    frust.m[10] = -(nearZ + farZ) / deltaZ;
+    frust.m[11] = -1.0f;
+
+    frust.m[14] = -2.0f * nearZ * farZ / deltaZ;
+    frust.m[12] = frust.m[13] = frust.m[15] = 0.0f;
+    Mat4::multiply(frust, *dst, dst);
+}
+
 void Mat4::createOrthographic(float width, float height, float zNearPlane, float zFarPlane, Mat4* dst)
 {
     float halfWidth = width / 2.0f;

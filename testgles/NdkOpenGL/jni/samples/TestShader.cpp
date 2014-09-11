@@ -7,6 +7,10 @@
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
 
+#include "math/CCGeometry.h"
+#include "math/Mat4.h"
+
+#include "base/ccMacros.h"
 #include "base/CCLog.h"
 #include "base/CCGL.h"
 #include "base/CCPlatformMacros.h"
@@ -45,6 +49,9 @@ const GLfloat gTriangleVertices[] = { 0.0f, 0.5f, -0.5f, -0.5f,
 
 void ShaderObject::init(int width, int height)
 {
+	this->width = width;
+	this->height = height;
+	aspect = (float) width/height;
     printGLString("Version", GL_VERSION);
     printGLString("Vendor", GL_VENDOR);
     printGLString("Renderer", GL_RENDERER);
@@ -56,13 +63,29 @@ void ShaderObject::init(int width, int height)
 
 	glGenVertexArrays(NumVAOs, VAOs);
 	glBindVertexArray(VAOs[Triangles]);
+//	GLfloat vertices[NumVertices][2] = {
+//		{ -0.90f, -.90f },  // Triangle 1
+//		{  0.85f, -0.90f },
+//		{ -0.90f, 0.85f },
+//		{  0.90, -0.85 },  // Triangle 2
+//		{  0.90,  0.90 },
+//		{ -0.85,  0.90 },
+//	};
+//	GLfloat vertices[NumVertices][2] = {
+//		{ -1.0f, -1.0f },  // Triangle 1
+//		{  1.0f, -1.0f },
+//		{ -1.0f, 1.0f },
+//		{  1.0f, -1.0f },  // Triangle 2
+//		{  1.0f,  1.0f },
+//		{ -1.0f,  1.0f },
+//	};
 	GLfloat vertices[NumVertices][2] = {
-		{ -0.90f, -.90f },  // Triangle 1
-		{  0.85f, -0.90f },
-		{ -0.90f, 0.85f },
-		{  0.90, -0.85 },  // Triangle 2
-		{  0.90,  0.90 },
-		{ -0.85,  0.90 },
+		{ -90.0f, 90.0f },  // Triangle 1
+		{  85.0f, 90.0f },
+		{ -90.0f, 85.0f },
+		{  90.0f, 85.0f },  // Triangle 2
+		{  90.0f, 90.0f },
+		{ -85.0f, 90.0f },
 	};
 	glGenBuffers(NumBuffers, Buffers);
 	glBindBuffer(GL_ARRAY_BUFFER, Buffers[ArrayBuffer]);
@@ -97,6 +120,32 @@ void ShaderObject::init(int width, int height)
     glViewport(0, 0, width, height);
 }
 
+
+#define MAX_LEN 1024
+static char s_temp[MAX_LEN];
+static std::string FloatToChar10(float f)
+{
+    snprintf(s_temp, MAX_LEN, "%f", f);
+    return (std::string) s_temp;
+}
+
+static std::string IntToChar10(int num)
+{
+	snprintf(s_temp, MAX_LEN, "%d", num);
+	return (std::string) s_temp;
+}
+
+static std::string FloatArrayToString(float f[], int size)
+{
+	printf("convertFloatArrayToString\n");
+	std::string sTemp;
+	for (int i = 0; i < size; ++i)
+	{
+		sTemp += "[" + IntToChar10(i) + "]:" + FloatToChar10(f[i]) + ",";
+	}
+	return sTemp;
+}
+
 void ShaderObject::draw()
 {
 	static float grey;
@@ -111,6 +160,39 @@ void ShaderObject::draw()
 
 	glUseProgram(program);
 	checkGlError("glUseProgram");
+
+	Mat4 projection_matrix = Mat4::IDENTITY;
+//	Mat4::createPerspective(60, aspect, 10.0f, getZEye() + height/2, &projection_matrix);
+//	Mat4::createFrustum(-1.0f, 1.0f, -aspect, aspect,1.0f, 500.0f, &projection_matrix);
+//	std::string s = FloatArrayToString(projection_matrix.m,16);
+//	LOGI("s = %s", s.c_str());
+
+//	projection_matrix.m[0] = 1.1547f;
+//	projection_matrix.m[5] = 1.73205090f;
+//	projection_matrix.m[10] = 1.02316570f;
+//	projection_matrix.m[11] = -1.0000f;
+//	projection_matrix.m[14] = 20.2316570f;
+
+	projection_matrix.m[12] = -480.0f;
+	projection_matrix.m[13] = -320.0f;
+	projection_matrix.m[14] = -553.346008f;
+	projection_matrix.m[15] = 1.0f;
+
+		std::string s = FloatArrayToString(projection_matrix.m,16);
+		LOGI("s = %s", s.c_str());
+
+//	projection_matrix.m[0] = 0.3f;
+//	projection_matrix.m[5] = 0.3f;
+//	projection_matrix.m[10] = 0.2f;
+
+	LOGI("createPerspective  width=%f, height = %f,aspect=%f, zFar:%f",width,  height, aspect,getZEye() + height/2);
+//    float matrixValue[16];
+//    memcpy(matrixValue, projection_matrix.m, sizeof(float)*16);
+	glUniformMatrix4fv(render_projection_matrix_loc, 1, GL_FALSE, projection_matrix.m);
+
+	Mat4 model_matrix = Mat4::IDENTITY;
+//    memcpy(matrixValue, model_matrix.m, sizeof(float)*16);
+	glUniformMatrix4fv(render_model_matrix_loc, 1, GL_FALSE, model_matrix.m);
 
     glBindVertexArray(VAOs[Triangles]);
     glDrawArrays(GL_TRIANGLES, 0, NumVertices);
@@ -134,4 +216,9 @@ void ShaderObject::draw()
 //	checkGlError("glEnableVertexAttribArray");
 //	glDrawArrays(GL_TRIANGLES, 0, 3);
 //	checkGlError("glDrawArrays");
+}
+
+float ShaderObject::getZEye()
+{
+	return this->height/1.1566f;
 }

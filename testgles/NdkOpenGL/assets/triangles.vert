@@ -4,5 +4,5 @@ uniform mat4 projection_matrix;
 attribute vec4 vPosition;
 
 void main() {
-    gl_Position = vPosition;
+    gl_Position = projection_matrix * (model_matrix * vPosition);
 }

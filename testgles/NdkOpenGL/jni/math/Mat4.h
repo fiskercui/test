@@ -181,6 +181,8 @@ public:
      * @param dst A matrix to store the result in.
      */
     static void createPerspective(float fieldOfView, float aspectRatio, float zNearPlane, float zFarPlane, Mat4* dst);
+    static void createFrustum(float left, float right, float bottom, float top, float nearZ, float far, Mat4* dst);
+
 
     /**
      * Creates an orthographic projection matrix.
