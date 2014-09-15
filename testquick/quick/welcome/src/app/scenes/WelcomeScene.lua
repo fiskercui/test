@@ -78,6 +78,7 @@ function WelcomeScene:createButtons(node)
         local index = self.localProjectListView_:getCurrentIndex()
         if index > 0 then
             local arguments = cc.player.settings.PLAYER_OPEN_RECENTS[index].args
+            dump(arguments)
             for _,v in ipairs(arguments) do
                 argumentVector:push_back(v)
             end

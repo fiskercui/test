@@ -297,6 +297,12 @@ void ProjectConfig::setDebuggerType(int debuggerType)
 
 void ProjectConfig::parseCommandLine(const vector<string> &args)
 {
+    for (auto it = args.begin(); it != args.end(); it++) {
+        string arg = *it;
+        CCLOG("arg = %s", arg.c_str());
+    }
+    
+    
     auto it = args.begin();
     while (it != args.end())
     {

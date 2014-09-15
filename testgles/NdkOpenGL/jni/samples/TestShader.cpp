@@ -71,22 +71,22 @@ void ShaderObject::init(int width, int height)
 //		{  0.90,  0.90 },
 //		{ -0.85,  0.90 },
 //	};
-//	GLfloat vertices[NumVertices][2] = {
-//		{ -1.0f, -1.0f },  // Triangle 1
-//		{  1.0f, -1.0f },
-//		{ -1.0f, 1.0f },
-//		{  1.0f, -1.0f },  // Triangle 2
-//		{  1.0f,  1.0f },
-//		{ -1.0f,  1.0f },
-//	};
 	GLfloat vertices[NumVertices][2] = {
-		{ -90.0f, 90.0f },  // Triangle 1
-		{  85.0f, 90.0f },
-		{ -90.0f, 85.0f },
-		{  90.0f, 85.0f },  // Triangle 2
-		{  90.0f, 90.0f },
-		{ -85.0f, 90.0f },
+		{ -2.0f, -2.0f },  // Triangle 1
+		{  2.0f, -2.0f },
+		{ -2.0f, 2.0f },
+		{  2.0f, -2.0f },  // Triangle 2
+		{  2.0f,  2.0f },
+		{ -2.0f,  2.0f },
 	};
+//	GLfloat vertices[NumVertices][2] = {
+//		{ -90.0f, -90.0f },  // Triangle 1
+//		{  90.0f, -90.0f },
+//		{ -90.0f, 90.0f },
+//		{  90.0f, -90.0f },  // Triangle 2
+//		{  90.0f, 90.0f },
+//		{ -90.0f, 90.0f },
+//	};
 	glGenBuffers(NumBuffers, Buffers);
 	glBindBuffer(GL_ARRAY_BUFFER, Buffers[ArrayBuffer]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
@@ -173,19 +173,25 @@ void ShaderObject::draw()
 //	projection_matrix.m[11] = -1.0000f;
 //	projection_matrix.m[14] = 20.2316570f;
 
-	projection_matrix.m[12] = -480.0f;
-	projection_matrix.m[13] = -320.0f;
-	projection_matrix.m[14] = -553.346008f;
-	projection_matrix.m[15] = 1.0f;
-
-		std::string s = FloatArrayToString(projection_matrix.m,16);
-		LOGI("s = %s", s.c_str());
+//s = [0]:1.000000,[1]:0.000000,[2]:0.000000,[3]:0.000000,[4]:0.000000,[5]:1.000000,[6]:0.000000,
+//	[7]:0.000000,[8]:0.000000,[9]:0.000000,[10]:1.000000,[11]:0.000000,[12]:-240.000000,
+//	[13]:-160.000000,[14]:-276.673004,[15]:1.000000,
+//	projection_matrix.m[12] = -240.0f;
+//	projection_matrix.m[13] = -160.0f;
+//	projection_matrix.m[14] = -276.673004f;
+//	projection_matrix.m[15] = 1.0f;
+	projection_matrix.m[12] = -1.0f;
+	projection_matrix.m[13] = -.0f;
+	projection_matrix.m[14] = -200.0f;
+//	projection_matrix.m[15] = 20.231657f;
+//		std::string s = FloatArrayToString(projection_matrix.m,16);
+//		LOGI("s = %s", s.c_str());
 
 //	projection_matrix.m[0] = 0.3f;
 //	projection_matrix.m[5] = 0.3f;
 //	projection_matrix.m[10] = 0.2f;
 
-	LOGI("createPerspective  width=%f, height = %f,aspect=%f, zFar:%f",width,  height, aspect,getZEye() + height/2);
+//	LOGI("createPerspective  width=%f, height = %f,aspect=%f, zFar:%f",width,  height, aspect,getZEye() + height/2);
 //    float matrixValue[16];
 //    memcpy(matrixValue, projection_matrix.m, sizeof(float)*16);
 	glUniformMatrix4fv(render_projection_matrix_loc, 1, GL_FALSE, projection_matrix.m);
