@@ -11,7 +11,7 @@ extern "C"
 }
 
 static void stackDump(lua_State* L){
-    cout<<"\nbegin dump lua stack"<<endl;
+    printf("\nbegin dump lua stack");
     int i = 0;
     int top = lua_gettop(L);
     for (i = 1; i <= top; ++i) {
@@ -510,12 +510,12 @@ void testCppObjectLua()
 
 int main (void) 
 {
-  // testTable();
+  testTable();
   // testExchangeData();
   // testLua();
   // testCppFunction();
   // testClosure();
   // testGlobalIndex();
-  testCppObjectLua();
+  // testCppObjectLua();
   return 0;
 }
