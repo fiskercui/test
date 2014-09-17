@@ -70,23 +70,23 @@ void ShaderObject::init(int width, int height)
 //		{  0.90, -0.85 },  // Triangle 2
 //		{  0.90,  0.90 },
 //		{ -0.85,  0.90 },
+//	};.
+//	GLfloat vertices[NumVertices][2] = {
+//		{ -2.0f, -2.0f },  // Triangle 1
+//		{  2.0f, -2.0f },
+//		{ -2.0f, 2.0f },
+//		{  2.0f, -2.0f },  // Triangle 2
+//		{  2.0f,  2.0f },
+//		{ -2.0f,  2.0f },
 //	};
 	GLfloat vertices[NumVertices][2] = {
-		{ -2.0f, -2.0f },  // Triangle 1
-		{  2.0f, -2.0f },
-		{ -2.0f, 2.0f },
-		{  2.0f, -2.0f },  // Triangle 2
-		{  2.0f,  2.0f },
-		{ -2.0f,  2.0f },
+		{ -90.0f, -90.0f },  // Triangle 1
+		{  90.0f, -90.0f },
+		{ -90.0f, 90.0f },
+		{  90.0f, -90.0f },  // Triangle 2
+		{  90.0f, 90.0f },
+		{ -90.0f, 90.0f },
 	};
-//	GLfloat vertices[NumVertices][2] = {
-//		{ -90.0f, -90.0f },  // Triangle 1
-//		{  90.0f, -90.0f },
-//		{ -90.0f, 90.0f },
-//		{  90.0f, -90.0f },  // Triangle 2
-//		{  90.0f, 90.0f },
-//		{ -90.0f, 90.0f },
-//	};
 	glGenBuffers(NumBuffers, Buffers);
 	glBindBuffer(GL_ARRAY_BUFFER, Buffers[ArrayBuffer]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
@@ -180,10 +180,17 @@ void ShaderObject::draw()
 //	projection_matrix.m[13] = -160.0f;
 //	projection_matrix.m[14] = -276.673004f;
 //	projection_matrix.m[15] = 1.0f;
-	projection_matrix.m[12] = -1.0f;
-	projection_matrix.m[13] = -.0f;
-	projection_matrix.m[14] = -200.0f;
-//	projection_matrix.m[15] = 20.231657f;
+
+
+	//尝试修改改革参数对矩形的影响
+	projection_matrix.m[0] = 1.2;
+	projection_matrix.m[5] = 1.732;
+	projection_matrix.m[10] = 1.047;
+	projection_matrix.m[11] = -1.0f;
+	projection_matrix.m[12] = -91.0f;
+	projection_matrix.m[13] = 114.0f;
+	projection_matrix.m[14] = -269.0f;
+	projection_matrix.m[15] = 276.231657f;
 //		std::string s = FloatArrayToString(projection_matrix.m,16);
 //		LOGI("s = %s", s.c_str());
 
