@@ -3,6 +3,7 @@
 *.xcuserstate
 *.out
 *.out.dSYM
+*.pyc
 /testgles/testopengles/gen/
 /testgles/NdkOpenGL/bin/
 /testgles/NdkOpenGL/obj/
