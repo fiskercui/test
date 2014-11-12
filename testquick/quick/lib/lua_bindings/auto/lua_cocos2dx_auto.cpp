@@ -3193,6 +3193,7 @@ int lua_cocos2dx_Mat4_createOrthographicOffCenter(lua_State* tolua_S)
 }
 int lua_cocos2dx_Mat4_constructor(lua_State* tolua_S)
 {
+    CCLOG("******************************");
     int argc = 0;
     cocos2d::Mat4* cobj = nullptr;
     bool ok  = true;

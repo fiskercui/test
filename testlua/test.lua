@@ -10,6 +10,8 @@ local tests = {
 	-- "testserialize",
 	-- "testenv",
 	-- "testtable",
+	-- "testimport",
+	-- "testcomponent",
 	"testimport",
 	-- "testfunction",
 	-- "teststring",
