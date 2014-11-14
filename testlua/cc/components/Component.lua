@@ -19,6 +19,9 @@ function Component:getTarget()
 end
 
 function Component:exportMethods_(methods)
+    dump(methods, "methods")
+    -- dump(self.target_, "self.target_")
+    -- dump(self, "self")
     self.exportedMethods_ = methods
     local target = self.target_
     local com = self
