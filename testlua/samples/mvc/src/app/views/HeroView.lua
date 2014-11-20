@@ -7,9 +7,11 @@
 
 ]]
 
-local HeroView = class("HeroView", function()
-    return display.newNode()
-end)
+-- local HeroView = class("HeroView", function()
+--     return display.newNode()
+-- end)
+
+local HeroView = class("HeroView")
 
 function HeroView:ctor(hero)
     local cls = hero.class

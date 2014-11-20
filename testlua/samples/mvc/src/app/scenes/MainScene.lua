@@ -1,9 +1,12 @@
 
 local PlayDuelController = import("..controllers.PlayDuelController")
 
-local MainScene = class("MainScene", function()
-    -- return display.newScene("MainScene")
-end)
+-- local MainScene = class("MainScene", function()
+--     -- return display.newScene("MainScene")
+-- end)
+
+local MainScene = class("MainScene")
+
 
 function MainScene:ctor()
     display.newColorLayer(cc.c4b(255, 255, 255, 255)):addTo(self)

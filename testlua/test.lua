@@ -20,12 +20,12 @@ local tests = {
 	-- "testbytearray"
 }
 
-local a = {1,2,3}
-local a1, b1, c1 = unpack(a)
+-- local a = {1,2,3}
+-- local a1, b1, c1 = unpack(a)
 
-print a1
-print b1
-print c1
+-- print a1
+-- print b1
+-- print c1
 
 
 function  testLeap(...)
