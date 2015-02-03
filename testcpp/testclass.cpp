@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 	delete pcls;
 
 	printf("m_a%d\n", pcls->m_a);
-	delete pcls;
+//	delete pcls;
 	
 	return 0;
 }
