@@ -11,15 +11,17 @@ extern "C"
 }
 
 static void stackDump(lua_State* L){
-    printf("\nbegin dump lua stack");
+    printf("****begin dump lua stack\n");
     int i = 0;
     int top = lua_gettop(L);
+    printf("there are %d elements\n", top);
     for (i = 1; i <= top; ++i) {
         int t = lua_type(L, i);
+        printf("**** %s ", lua_typename(L, t));
         switch (t) {
             case LUA_TSTRING:
             {
-                printf("'%s' ", lua_tostring(L, i));
+                printf("\t'%s' \n", lua_tostring(L, i));
             }
                 break;
             case LUA_TBOOLEAN:
@@ -28,17 +30,17 @@ static void stackDump(lua_State* L){
             }break;
             case LUA_TNUMBER:
             {
-                printf("%g ", lua_tonumber(L, i));
+                printf("\t%g \n", lua_tonumber(L, i));
             }
                 break;
             default:
             {
-                printf("%s ", lua_typename(L, t));
+                printf("\t%s \n", lua_typename(L, t));
             }
                 break;
         }
     }
-    printf("\nend dump lua stack\n");
+    printf("****end dump lua stack\n");
 }
 
 void testExchangeData()
@@ -161,13 +163,15 @@ void testTable()
       lua_pop(L, 1);
 
 
-      for(int i = 1; i<=2; i++)
+      for(int i = 1; i<=3; i++)
       {
         lua_pushnumber(L, i );
         lua_gettable(L, -2);
         printf("x[%d]=%s\n", i, lua_tostring(L, -1));
+              stackDump(L);
         lua_pop(L, 1);
       }
+
     }
     lua_pop(L,1); //pop top stack 'x'
   }
