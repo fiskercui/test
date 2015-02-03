@@ -32,6 +32,7 @@ cc 扩展在 cocos2dx C++ API 和 quick 基本模块的基础上，提供了符�
 
 local CURRENT_MODULE_NAME = ...
 
+<<<<<<< HEAD
 local CURRENT_MODULE_NAME = ...
 
 cc = cc or {}
@@ -39,6 +40,8 @@ cc.PACKAGE_NAME = string.sub(CURRENT_MODULE_NAME, 1, -6)
 cc.VERSION = "3.3 RC0"
 cc.FRAMEWORK_NAME = "quick-cocos2d-x"
 
+=======
+>>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
 -- init base classes
 cc.Registry   = import(".Registry")
 cc.GameObject = import(".GameObject")
@@ -62,6 +65,10 @@ local GameObject = cc.GameObject
 local ccmt = {}
 ccmt.__call = function(self, target)
     if target then
+<<<<<<< HEAD
+=======
+        printInfo("ccmt calll - calll image")
+>>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
         return GameObject.extend(target)
     end
     printError("cc() - invalid target")

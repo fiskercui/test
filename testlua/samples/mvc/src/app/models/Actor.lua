@@ -36,6 +36,12 @@ Actor.schema["hp"]       = {"number", 1}
 function Actor:ctor(properties, events, callbacks)
     Actor.super.ctor(self, properties)
 
+<<<<<<< HEAD
+=======
+    -- add by weihua.cui
+    dump(self, "actor", nil)
+
+>>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
     -- 因为角色存在不同状态，所以这里为 Actor 绑定了状态机组件
     self:addComponent("components.behavior.StateMachine")
     -- 由于状态机仅供内部使用，所以不应该调用组件的 exportMethods() 方法，改为用内部属性保存状态机组件对象

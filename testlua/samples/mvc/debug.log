@@ -1,0 +1,860 @@
+cocos2d: Quick-Cocos2d-x C++ support ready.
+cocos2d: ------------------------------------------------
+cocos2d: LOAD LUA FILE: /Users/weihua/Documents/quick-3.3rc0/quick/samples/mvc/src/main.lua
+cocos2d: ------------------------------------------------
+cocos2d: [LUA-print] Could not connect to localhost:8172: connection refused
+cocos2d: [LUA-print] ===========================================================
+cocos2d: [LUA-print]               LOAD QUICK FRAMEWORK
+cocos2d: [LUA-print] ===========================================================
+cocos2d: [LUA-print] [INFO] 
+cocos2d: [LUA-print] [INFO] # DEBUG                        = 1
+cocos2d: [LUA-print] [INFO] #
+cocos2d: [LUA-print] [INFO] # device.platform              = mac
+cocos2d: [LUA-print] [INFO] # device.model                 = unknown
+cocos2d: [LUA-print] [INFO] # device.language              = cn
+cocos2d: [LUA-print] [INFO] # device.writablePath          = /Users/weihua/Documents/quick-3.3rc0/quick/samples/mvc/
+cocos2d: [LUA-print] [INFO] # device.directorySeparator    = /
+cocos2d: [LUA-print] [INFO] # device.pathSeparator         = :
+cocos2d: [LUA-print] [INFO] #
+libpng warning: iCCP: known incorrect sRGB profile
+cocos2d: [LUA-print] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_HEIGHT
+cocos2d: [LUA-print] [INFO] # CONFIG_SCREEN_WIDTH          = 960.00
+cocos2d: [LUA-print] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+cocos2d: [LUA-print] [INFO] # display.widthInPixels        = 960.00
+cocos2d: [LUA-print] [INFO] # display.heightInPixels       = 640.00
+cocos2d: [LUA-print] [INFO] # display.contentScaleFactor   = 1.00
+cocos2d: [LUA-print] [INFO] # display.width                = 960.00
+cocos2d: [LUA-print] [INFO] # display.height               = 640.00
+cocos2d: [LUA-print] [INFO] # display.cx                   = 480.00
+cocos2d: [LUA-print] [INFO] # display.cy                   = 320.00
+cocos2d: [LUA-print] [INFO] # display.left                 = 0.00
+cocos2d: [LUA-print] [INFO] # display.right                = 960.00
+cocos2d: [LUA-print] [INFO] # display.top                  = 640.00
+cocos2d: [LUA-print] [INFO] # display.bottom               = 0.00
+cocos2d: [LUA-print] [INFO] # display.c_left               = -480.00
+cocos2d: [LUA-print] [INFO] # display.c_right              = 480.00
+cocos2d: [LUA-print] [INFO] # display.c_top                = 320.00
+cocos2d: [LUA-print] [INFO] # display.c_bottom             = -320.00
+cocos2d: [LUA-print] [INFO] #
+cocos2d: [LUA-print] dump from: [string "framework/cc/Registry.lua"]:8: in function 'add'
+cocos2d: [LUA-print] - "cls" = {
+cocos2d: [LUA-print] -     "ASYNC"                    = "ASYNC"
+cocos2d: [LUA-print] -     "CANCELLED"                = 3
+cocos2d: [LUA-print] -     "FAILURE"                  = 5
+cocos2d: [LUA-print] -     "INVALID_CALLBACK_ERROR"   = "INVALID_CALLBACK_ERROR"
+cocos2d: [LUA-print] -     "INVALID_TRANSITION_ERROR" = "INVALID_TRANSITION_ERROR"
+cocos2d: [LUA-print] -     "NOTRANSITION"             = 2
+cocos2d: [LUA-print] -     "PENDING"                  = 4
+cocos2d: [LUA-print] -     "PENDING_TRANSITION_ERROR" = "PENDING_TRANSITION_ERROR"
+cocos2d: [LUA-print] -     "SUCCEEDED"                = 1
+cocos2d: [LUA-print] -     "VERSION"                  = "2.2.0"
+cocos2d: [LUA-print] -     "WILDCARD"                 = "*"
+cocos2d: [LUA-print] -     "__cname"                  = "StateMachine"
+cocos2d: [LUA-print] -     "__ctype"                  = 2
+cocos2d: [LUA-print] -     __index                  = *REF*
+cocos2d: [LUA-print] -     "addEvent_"                = function: 0x12cd7e98
+cocos2d: [LUA-print] -     "afterAnyEvent_"           = function: 0x12cd7718
+cocos2d: [LUA-print] -     "afterEvent_"              = function: 0x12cd77e0
+cocos2d: [LUA-print] -     "afterThisEvent_"          = function: 0x12cd43d8
+cocos2d: [LUA-print] -     "beforeAnyEvent_"          = function: 0x12cd7ed8
+cocos2d: [LUA-print] -     "beforeEvent_"             = function: 0x12cd77c0
+cocos2d: [LUA-print] -     "beforeThisEvent_"         = function: 0x12cd43b8
+cocos2d: [LUA-print] -     "canDoEvent"               = function: 0x12cd7d98
+cocos2d: [LUA-print] -     "cannotDoEvent"            = function: 0x12cd7db8
+cocos2d: [LUA-print] -     "changeState_"             = function: 0x12cd4398
+cocos2d: [LUA-print] -     "ctor"                     = function: 0x12cd79d0
+cocos2d: [LUA-print] -     "doEvent"                  = function: 0x12cd7e18
+cocos2d: [LUA-print] -     "doEventForce"             = function: 0x12cd7df8
+cocos2d: [LUA-print] -     "enterAnyState_"           = function: 0x12cd4378
+cocos2d: [LUA-print] -     "enterState_"              = function: 0x12cd7820
+cocos2d: [LUA-print] -     "enterThisState_"          = function: 0x12cd77a0
+cocos2d: [LUA-print] -     "exportMethods"            = function: 0x12cd7e38
+cocos2d: [LUA-print] -     "getState"                 = function: 0x12cd7d58
+cocos2d: [LUA-print] -     "isFinishedState"          = function: 0x12cd7dd8
+cocos2d: [LUA-print] -     "isReady"                  = function: 0x12cd7d38
+cocos2d: [LUA-print] -     "isState"                  = function: 0x12cd7d78
+cocos2d: [LUA-print] -     "leaveAnyState_"           = function: 0x12cd7738
+cocos2d: [LUA-print] -     "leaveState_"              = function: 0x12cd7800
+cocos2d: [LUA-print] -     "leaveThisState_"          = function: 0x12cd7780
+cocos2d: [LUA-print] -     "new"                      = function: 0x12cdaff8
+cocos2d: [LUA-print] -     "onBind_"                  = function: 0x12cd7e58
+cocos2d: [LUA-print] -     "onError_"                 = function: 0x12cd7840
+cocos2d: [LUA-print] -     "onUnbind_"                = function: 0x12cd7e78
+cocos2d: [LUA-print] -     "setupState"               = function: 0x12cd7d18
+cocos2d: [LUA-print] -     "super" = {
+cocos2d: [LUA-print] -         "__cname"        = "Component"
+cocos2d: [LUA-print] -         "__ctype"        = 2
+cocos2d: [LUA-print] -         __index        = *REF*
+cocos2d: [LUA-print] -         "bind_"          = function: 0x12cd2ce0
+cocos2d: [LUA-print] -         "ctor"           = function: 0x12cd2c40
+cocos2d: [LUA-print] -         "exportMethods_" = function: 0x12cd2cc0
+cocos2d: [LUA-print] -         "getDepends"     = function: 0x12cd2c80
+cocos2d: [LUA-print] -         "getName"        = function: 0x12cd2c60
+cocos2d: [LUA-print] -         "getTarget"      = function: 0x12cd2ca0
+cocos2d: [LUA-print] -         "new"            = function: 0x12cd27f0
+cocos2d: [LUA-print] -         "onBind_"        = function: 0x12cd2d20
+cocos2d: [LUA-print] -         "onUnbind_"      = function: 0x12cd2d40
+cocos2d: [LUA-print] -         "unbind_"        = function: 0x12cd2d00
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] namecomponents.behavior.StateMachine
+cocos2d: [LUA-print] dump from: [string "framework/cc/Registry.lua"]:8: in function 'add'
+cocos2d: [LUA-print] - "cls" = {
+cocos2d: [LUA-print] -     "__cname"                     = "EventProtocol"
+cocos2d: [LUA-print] -     "__ctype"                     = 2
+cocos2d: [LUA-print] -     __index                     = *REF*
+cocos2d: [LUA-print] -     "addEventListener"            = function: 0x12ce08c0
+cocos2d: [LUA-print] -     "ctor"                        = function: 0x12ce0880
+cocos2d: [LUA-print] -     "dispatchEvent"               = function: 0x12ce08e0
+cocos2d: [LUA-print] -     "dumpAllEventListeners"       = function: 0x12ce00a8
+cocos2d: [LUA-print] -     "exportMethods"               = function: 0x12ce0710
+cocos2d: [LUA-print] -     "hasEventListener"            = function: 0x12ce0b08
+cocos2d: [LUA-print] -     "new"                         = function: 0x12ce0778
+cocos2d: [LUA-print] -     "onBind_"                     = function: 0x12ce0730
+cocos2d: [LUA-print] -     "onUnbind_"                   = function: 0x12ce0750
+cocos2d: [LUA-print] -     "removeAllEventListeners"     = function: 0x12ce0ae8
+cocos2d: [LUA-print] -     "removeEventListener"         = function: 0x12ce0900
+cocos2d: [LUA-print] -     "removeEventListenersByEvent" = function: 0x12ce0ac8
+cocos2d: [LUA-print] -     "removeEventListenersByTag"   = function: 0x12ce0aa8
+cocos2d: [LUA-print] -     "super" = {
+cocos2d: [LUA-print] -         "__cname"        = "Component"
+cocos2d: [LUA-print] -         "__ctype"        = 2
+cocos2d: [LUA-print] -         __index        = *REF*
+cocos2d: [LUA-print] -         "bind_"          = function: 0x12cd2ce0
+cocos2d: [LUA-print] -         "ctor"           = function: 0x12cd2c40
+cocos2d: [LUA-print] -         "exportMethods_" = function: 0x12cd2cc0
+cocos2d: [LUA-print] -         "getDepends"     = function: 0x12cd2c80
+cocos2d: [LUA-print] -         "getName"        = function: 0x12cd2c60
+cocos2d: [LUA-print] -         "getTarget"      = function: 0x12cd2ca0
+cocos2d: [LUA-print] -         "new"            = function: 0x12cd27f0
+cocos2d: [LUA-print] -         "onBind_"        = function: 0x12cd2d20
+cocos2d: [LUA-print] -         "onUnbind_"      = function: 0x12cd2d40
+cocos2d: [LUA-print] -         "unbind_"        = function: 0x12cd2d00
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] namecomponents.behavior.EventProtocol
+cocos2d: [LUA-print] dump from: [string "framework/cc/Registry.lua"]:8: in function 'add'
+cocos2d: [LUA-print] - "cls" = {
+cocos2d: [LUA-print] -     "__cname"             = "BasicLayoutProtocol"
+cocos2d: [LUA-print] -     "__ctype"             = 2
+cocos2d: [LUA-print] -     __index             = *REF*
+cocos2d: [LUA-print] -     "ctor"                = function: 0x12bae4d8
+cocos2d: [LUA-print] -     "exportMethods"       = function: 0x12bae9e0
+cocos2d: [LUA-print] -     "getLayoutMargin"     = function: 0x12bae698
+cocos2d: [LUA-print] -     "getLayoutMaxSize"    = function: 0x12bae598
+cocos2d: [LUA-print] -     "getLayoutMinSize"    = function: 0x12bae558
+cocos2d: [LUA-print] -     "getLayoutPadding"    = function: 0x12bae658
+cocos2d: [LUA-print] -     "getLayoutSize"       = function: 0x12bae518
+cocos2d: [LUA-print] -     "getLayoutSizePolicy" = function: 0x12bae5d8
+cocos2d: [LUA-print] -     "new"                 = function: 0x12bae498
+cocos2d: [LUA-print] -     "onBind_"             = function: 0x12baea00
+cocos2d: [LUA-print] -     "onUnbind_"           = function: 0x12baea40
+cocos2d: [LUA-print] -     "setLayoutMargin"     = function: 0x12bae9c0
+cocos2d: [LUA-print] -     "setLayoutMaxSize"    = function: 0x12bae5b8
+cocos2d: [LUA-print] -     "setLayoutMinSize"    = function: 0x12bae578
+cocos2d: [LUA-print] -     "setLayoutPadding"    = function: 0x12bae678
+cocos2d: [LUA-print] -     "setLayoutSize"       = function: 0x12bae538
+cocos2d: [LUA-print] -     "setLayoutSizePolicy" = function: 0x12bae618
+cocos2d: [LUA-print] -     "super" = {
+cocos2d: [LUA-print] -         "__cname"        = "Component"
+cocos2d: [LUA-print] -         "__ctype"        = 2
+cocos2d: [LUA-print] -         __index        = *REF*
+cocos2d: [LUA-print] -         "bind_"          = function: 0x12cd2ce0
+cocos2d: [LUA-print] -         "ctor"           = function: 0x12cd2c40
+cocos2d: [LUA-print] -         "exportMethods_" = function: 0x12cd2cc0
+cocos2d: [LUA-print] -         "getDepends"     = function: 0x12cd2c80
+cocos2d: [LUA-print] -         "getName"        = function: 0x12cd2c60
+cocos2d: [LUA-print] -         "getTarget"      = function: 0x12cd2ca0
+cocos2d: [LUA-print] -         "new"            = function: 0x12cd27f0
+cocos2d: [LUA-print] -         "onBind_"        = function: 0x12cd2d20
+cocos2d: [LUA-print] -         "onUnbind_"      = function: 0x12cd2d40
+cocos2d: [LUA-print] -         "unbind_"        = function: 0x12cd2d00
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] namecomponents.ui.BasicLayoutProtocol
+cocos2d: [LUA-print] dump from: [string "framework/cc/Registry.lua"]:8: in function 'add'
+cocos2d: [LUA-print] - "cls" = {
+cocos2d: [LUA-print] -     "__cname"       = "LayoutProtocol"
+cocos2d: [LUA-print] -     "__ctype"       = 2
+cocos2d: [LUA-print] -     __index       = *REF*
+cocos2d: [LUA-print] -     "ctor"          = function: 0x12bb1470
+cocos2d: [LUA-print] -     "exportMethods" = function: 0x12bb1698
+cocos2d: [LUA-print] -     "getLayout"     = function: 0x12bb14f0
+cocos2d: [LUA-print] -     "new"           = function: 0x12bb1430
+cocos2d: [LUA-print] -     "setLayout"     = function: 0x12bb14d0
+cocos2d: [LUA-print] -     "setLayoutSize" = function: 0x12bb14b0
+cocos2d: [LUA-print] -     "super" = {
+cocos2d: [LUA-print] -         "__cname"             = "BasicLayoutProtocol"
+cocos2d: [LUA-print] -         "__ctype"             = 2
+cocos2d: [LUA-print] -         __index             = *REF*
+cocos2d: [LUA-print] -         "ctor"                = function: 0x12bae4d8
+cocos2d: [LUA-print] -         "exportMethods"       = function: 0x12bae9e0
+cocos2d: [LUA-print] -         "getLayoutMargin"     = function: 0x12bae698
+cocos2d: [LUA-print] -         "getLayoutMaxSize"    = function: 0x12bae598
+cocos2d: [LUA-print] -         "getLayoutMinSize"    = function: 0x12bae558
+cocos2d: [LUA-print] -         "getLayoutPadding"    = function: 0x12bae658
+cocos2d: [LUA-print] -         "getLayoutSize"       = function: 0x12bae518
+cocos2d: [LUA-print] -         "getLayoutSizePolicy" = function: 0x12bae5d8
+cocos2d: [LUA-print] -         "new"                 = function: 0x12bae498
+cocos2d: [LUA-print] -         "onBind_"             = function: 0x12baea00
+cocos2d: [LUA-print] -         "onUnbind_"           = function: 0x12baea40
+cocos2d: [LUA-print] -         "setLayoutMargin"     = function: 0x12bae9c0
+cocos2d: [LUA-print] -         "setLayoutMaxSize"    = function: 0x12bae5b8
+cocos2d: [LUA-print] -         "setLayoutMinSize"    = function: 0x12bae578
+cocos2d: [LUA-print] -         "setLayoutPadding"    = function: 0x12bae678
+cocos2d: [LUA-print] -         "setLayoutSize"       = function: 0x12bae538
+cocos2d: [LUA-print] -         "setLayoutSizePolicy" = function: 0x12bae618
+cocos2d: [LUA-print] -         "super" = {
+cocos2d: [LUA-print] -             "__cname"        = "Component"
+cocos2d: [LUA-print] -             "__ctype"        = 2
+cocos2d: [LUA-print] -             __index        = *REF*
+cocos2d: [LUA-print] -             "bind_"          = function: 0x12cd2ce0
+cocos2d: [LUA-print] -             "ctor"           = function: 0x12cd2c40
+cocos2d: [LUA-print] -             "exportMethods_" = function: 0x12cd2cc0
+cocos2d: [LUA-print] -             "getDepends"     = function: 0x12cd2c80
+cocos2d: [LUA-print] -             "getName"        = function: 0x12cd2c60
+cocos2d: [LUA-print] -             "getTarget"      = function: 0x12cd2ca0
+cocos2d: [LUA-print] -             "new"            = function: 0x12cd27f0
+cocos2d: [LUA-print] -             "onBind_"        = function: 0x12cd2d20
+cocos2d: [LUA-print] -             "onUnbind_"      = function: 0x12cd2d40
+cocos2d: [LUA-print] -             "unbind_"        = function: 0x12cd2d00
+cocos2d: [LUA-print] -         }
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] namecomponents.ui.LayoutProtocol
+cocos2d: [LUA-print] dump from: [string "framework/cc/Registry.lua"]:8: in function 'add'
+cocos2d: [LUA-print] - "cls" = {
+cocos2d: [LUA-print] -     "__cname"            = "DraggableProtocol"
+cocos2d: [LUA-print] -     "__ctype"            = 2
+cocos2d: [LUA-print] -     __index            = *REF*
+cocos2d: [LUA-print] -     "ctor"               = function: 0x12cf6c08
+cocos2d: [LUA-print] -     "dragOnTouch_"       = function: 0x12cf5c68
+cocos2d: [LUA-print] -     "exportMethods"      = function: 0x12cf6828
+cocos2d: [LUA-print] -     "new"                = function: 0x12cf6bc8
+cocos2d: [LUA-print] -     "setDraggableEnable" = function: 0x12cf6808
+cocos2d: [LUA-print] -     "super" = {
+cocos2d: [LUA-print] -         "__cname"        = "Component"
+cocos2d: [LUA-print] -         "__ctype"        = 2
+cocos2d: [LUA-print] -         __index        = *REF*
+cocos2d: [LUA-print] -         "bind_"          = function: 0x12cd2ce0
+cocos2d: [LUA-print] -         "ctor"           = function: 0x12cd2c40
+cocos2d: [LUA-print] -         "exportMethods_" = function: 0x12cd2cc0
+cocos2d: [LUA-print] -         "getDepends"     = function: 0x12cd2c80
+cocos2d: [LUA-print] -         "getName"        = function: 0x12cd2c60
+cocos2d: [LUA-print] -         "getTarget"      = function: 0x12cd2ca0
+cocos2d: [LUA-print] -         "new"            = function: 0x12cd27f0
+cocos2d: [LUA-print] -         "onBind_"        = function: 0x12cd2d20
+cocos2d: [LUA-print] -         "onUnbind_"      = function: 0x12cd2d40
+cocos2d: [LUA-print] -         "unbind_"        = function: 0x12cd2d00
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] namecomponents.ui.DraggableProtocol
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "app/models/Actor.lua"]:40: in function 'ctor'
+cocos2d: [LUA-print] - "actor" = {
+cocos2d: [LUA-print] -     "addComponent"                    = function: 0x12caea00
+cocos2d: [LUA-print] -     "addEventListener"                = function: 0x12c54bc8
+cocos2d: [LUA-print] -     "checkComponent"                  = function: 0x12b27030
+cocos2d: [LUA-print] -     "class" = {
+cocos2d: [LUA-print] -         "EXP_CHANGED_EVENT" = "EXP_CHANGED_EVENT"
+cocos2d: [LUA-print] -         "LEVEL_UP_EVENT"    = "LEVEL_UP_EVENT"
+cocos2d: [LUA-print] -         "NEXT_LEVEL_EXP"    = 50
+cocos2d: [LUA-print] -         "__cname"           = "Hero"
+cocos2d: [LUA-print] -         "__ctype"           = 2
+cocos2d: [LUA-print] -         __index           = *REF*
+cocos2d: [LUA-print] -         "getExp"            = function: 0x12bfeba0
+cocos2d: [LUA-print] -         "hit"               = function: 0x12c6a498
+cocos2d: [LUA-print] -         "increaseEXP"       = function: 0x12bfeb60
+cocos2d: [LUA-print] -         "new"               = function: 0x12d05480
+cocos2d: [LUA-print] -         "schema" = {
+cocos2d: [LUA-print] -             exp = *MAX NESTING*
+cocos2d: [LUA-print] -             hp = *MAX NESTING*
+cocos2d: [LUA-print] -             id = *MAX NESTING*
+cocos2d: [LUA-print] -             level = *MAX NESTING*
+cocos2d: [LUA-print] -             nickname = *MAX NESTING*
+cocos2d: [LUA-print] -         }
+cocos2d: [LUA-print] -         "super" = {
+cocos2d: [LUA-print] -             "ATTACK_EVENT"       = "ATTACK_EVENT"
+cocos2d: [LUA-print] -             "CHANGE_STATE_EVENT" = "CHANGE_STATE_EVENT"
+cocos2d: [LUA-print] -             "FIRE_COOLDOWN"      = 0.2
+cocos2d: [LUA-print] -             "FIRE_EVENT"         = "FIRE_EVENT"
+cocos2d: [LUA-print] -             "FREEZE_EVENT"       = "FREEZE_EVENT"
+cocos2d: [LUA-print] -             "HP_CHANGED_EVENT"   = "HP_CHANGED_EVENT"
+cocos2d: [LUA-print] -             "KILL_EVENT"         = "KILL_EVENT"
+cocos2d: [LUA-print] -             "READY_EVENT"        = "READY_EVENT"
+cocos2d: [LUA-print] -             "RELIVE_EVENT"       = "RELIVE_EVENT"
+cocos2d: [LUA-print] -             "START_EVENT"        = "START_EVENT"
+cocos2d: [LUA-print] -             "THAW_EVENT"         = "THAW_EVENT"
+cocos2d: [LUA-print] -             "UNDER_ATTACK_EVENT" = "UNDER_ATTACK_EVENT"
+cocos2d: [LUA-print] -             "__cname"            = "Actor"
+cocos2d: [LUA-print] -             "__ctype"            = 2
+cocos2d: [LUA-print] -             __index            = *REF*
+cocos2d: [LUA-print] -             "canFire"            = function: 0x12b66028
+cocos2d: [LUA-print] -             "ctor"               = function: 0x12bb06e0
+cocos2d: [LUA-print] -             "decreaseHp"         = function: 0x12b660c8
+cocos2d: [LUA-print] -             "fire"               = function: 0x12b660e8
+cocos2d: [LUA-print] -             "getArmor"           = function: 0x12b65fe8
+cocos2d: [LUA-print] -             "getAttack"          = function: 0x12c50950
+cocos2d: [LUA-print] -             "getHp"              = function: 0x12c50910
+cocos2d: [LUA-print] -             "getLevel"           = function: 0x12bb0740
+cocos2d: [LUA-print] -             "getMaxHp"           = function: 0x12c50930
+cocos2d: [LUA-print] -             "getNickname"        = function: 0x12bb0720
+cocos2d: [LUA-print] -             "getState"           = function: 0x12b66008
+cocos2d: [LUA-print] -             "hit"                = function: 0x12b65868
+cocos2d: [LUA-print] -             "increaseHp"         = function: 0x12b660a8
+cocos2d: [LUA-print] -             "isDead"             = function: 0x12b66048
+cocos2d: [LUA-print] -             "isFrozen"           = function: 0x12b66068
+cocos2d: [LUA-print] -             "new"                = function: 0x12c50978
+cocos2d: [LUA-print] -             "onChangeState_"     = function: 0x12b65888
+cocos2d: [LUA-print] -             "onFire_"            = function: 0x12b658e8
+cocos2d: [LUA-print] -             "onFreeze_"          = function: 0x12b65908
+cocos2d: [LUA-print] -             "onKill_"            = function: 0x12b65948
+cocos2d: [LUA-print] -             "onLeaveFiring_"     = function: 0x12b5d268
+cocos2d: [LUA-print] -             "onReady_"           = function: 0x12b658c8
+cocos2d: [LUA-print] -             "onRelive_"          = function: 0x12b65968
+cocos2d: [LUA-print] -             "onStart_"           = function: 0x12b658a8
+cocos2d: [LUA-print] -             "onThaw_"            = function: 0x12b65928
+cocos2d: [LUA-print] -             schema = *MAX NESTING*
+cocos2d: [LUA-print] -             "setFullHp"          = function: 0x12b66088
+cocos2d: [LUA-print] -             super = *MAX NESTING*
+cocos2d: [LUA-print] -         }
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] -     "components_" = {
+cocos2d: [LUA-print] -         "components.behavior.EventProtocol" = {
+cocos2d: [LUA-print] -             class = *MAX NESTING*
+cocos2d: [LUA-print] -             depends_ = *MAX NESTING*
+cocos2d: [LUA-print] -             exportedMethods_ = *MAX NESTING*
+cocos2d: [LUA-print] -             listeners_ = *MAX NESTING*
+cocos2d: [LUA-print] -             "name_"                    = "EventProtocol"
+cocos2d: [LUA-print] -             "nextListenerHandleIndex_" = 0
+cocos2d: [LUA-print] -             target_                  = *REF*
+cocos2d: [LUA-print] -         }
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] -     "dispatchEvent"                   = function: 0x12c54ae8
+cocos2d: [LUA-print] -     "dumpAllEventListeners"           = function: 0x12c20708
+cocos2d: [LUA-print] -     "exp_"                            = 0
+cocos2d: [LUA-print] -     "getComponent"                    = function: 0x12c9d190
+cocos2d: [LUA-print] -     "hasEventListener"                = function: 0x12c206c0
+cocos2d: [LUA-print] -     "hp_"                             = 1
+cocos2d: [LUA-print] -     "id_"                             = "player"
+cocos2d: [LUA-print] -     "isModelBase_"                    = true
+cocos2d: [LUA-print] -     "level_"                          = 1
+cocos2d: [LUA-print] -     "nickname_"                       = "dualface"
+cocos2d: [LUA-print] -     "removeAllEventListeners"         = function: 0x12caeaf8
+cocos2d: [LUA-print] -     "removeAllEventListenersForEvent" = function: 0x12caeab0
+cocos2d: [LUA-print] -     "removeComponent"                 = function: 0x12caea20
+cocos2d: [LUA-print] -     "removeEventListener"             = function: 0x12c1df98
+cocos2d: [LUA-print] -     "removeEventListenersByEvent"     = function: 0x12caea68
+cocos2d: [LUA-print] -     "removeEventListenersByTag"       = function: 0x12caea40
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] actor player:dualface state change from none to idle
+cocos2d: [LUA-print] actor player:dualface start
+cocos2d: [LUA-print] create player
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "app/models/Actor.lua"]:40: in function 'ctor'
+cocos2d: [LUA-print] - "actor" = {
+cocos2d: [LUA-print] -     "addComponent"                    = function: 0x12cb0648
+cocos2d: [LUA-print] -     "addEventListener"                = function: 0x12cb0718
+cocos2d: [LUA-print] -     "checkComponent"                  = function: 0x12cb06f8
+cocos2d: [LUA-print] -     "class" = {
+cocos2d: [LUA-print] -         "EXP_CHANGED_EVENT" = "EXP_CHANGED_EVENT"
+cocos2d: [LUA-print] -         "LEVEL_UP_EVENT"    = "LEVEL_UP_EVENT"
+cocos2d: [LUA-print] -         "NEXT_LEVEL_EXP"    = 50
+cocos2d: [LUA-print] -         "__cname"           = "Hero"
+cocos2d: [LUA-print] -         "__ctype"           = 2
+cocos2d: [LUA-print] -         __index           = *REF*
+cocos2d: [LUA-print] -         "getExp"            = function: 0x12bfeba0
+cocos2d: [LUA-print] -         "hit"               = function: 0x12c6a498
+cocos2d: [LUA-print] -         "increaseEXP"       = function: 0x12bfeb60
+cocos2d: [LUA-print] -         "new"               = function: 0x12d05480
+cocos2d: [LUA-print] -         "schema" = {
+cocos2d: [LUA-print] -             exp = *MAX NESTING*
+cocos2d: [LUA-print] -             hp = *MAX NESTING*
+cocos2d: [LUA-print] -             id = *MAX NESTING*
+cocos2d: [LUA-print] -             level = *MAX NESTING*
+cocos2d: [LUA-print] -             nickname = *MAX NESTING*
+cocos2d: [LUA-print] -         }
+cocos2d: [LUA-print] -         "super" = {
+cocos2d: [LUA-print] -             "ATTACK_EVENT"       = "ATTACK_EVENT"
+cocos2d: [LUA-print] -             "CHANGE_STATE_EVENT" = "CHANGE_STATE_EVENT"
+cocos2d: [LUA-print] -             "FIRE_COOLDOWN"      = 0.2
+cocos2d: [LUA-print] -             "FIRE_EVENT"         = "FIRE_EVENT"
+cocos2d: [LUA-print] -             "FREEZE_EVENT"       = "FREEZE_EVENT"
+cocos2d: [LUA-print] -             "HP_CHANGED_EVENT"   = "HP_CHANGED_EVENT"
+cocos2d: [LUA-print] -             "KILL_EVENT"         = "KILL_EVENT"
+cocos2d: [LUA-print] -             "READY_EVENT"        = "READY_EVENT"
+cocos2d: [LUA-print] -             "RELIVE_EVENT"       = "RELIVE_EVENT"
+cocos2d: [LUA-print] -             "START_EVENT"        = "START_EVENT"
+cocos2d: [LUA-print] -             "THAW_EVENT"         = "THAW_EVENT"
+cocos2d: [LUA-print] -             "UNDER_ATTACK_EVENT" = "UNDER_ATTACK_EVENT"
+cocos2d: [LUA-print] -             "__cname"            = "Actor"
+cocos2d: [LUA-print] -             "__ctype"            = 2
+cocos2d: [LUA-print] -             __index            = *REF*
+cocos2d: [LUA-print] -             "canFire"            = function: 0x12b66028
+cocos2d: [LUA-print] -             "ctor"               = function: 0x12bb06e0
+cocos2d: [LUA-print] -             "decreaseHp"         = function: 0x12b660c8
+cocos2d: [LUA-print] -             "fire"               = function: 0x12b660e8
+cocos2d: [LUA-print] -             "getArmor"           = function: 0x12b65fe8
+cocos2d: [LUA-print] -             "getAttack"          = function: 0x12c50950
+cocos2d: [LUA-print] -             "getHp"              = function: 0x12c50910
+cocos2d: [LUA-print] -             "getLevel"           = function: 0x12bb0740
+cocos2d: [LUA-print] -             "getMaxHp"           = function: 0x12c50930
+cocos2d: [LUA-print] -             "getNickname"        = function: 0x12bb0720
+cocos2d: [LUA-print] -             "getState"           = function: 0x12b66008
+cocos2d: [LUA-print] -             "hit"                = function: 0x12b65868
+cocos2d: [LUA-print] -             "increaseHp"         = function: 0x12b660a8
+cocos2d: [LUA-print] -             "isDead"             = function: 0x12b66048
+cocos2d: [LUA-print] -             "isFrozen"           = function: 0x12b66068
+cocos2d: [LUA-print] -             "new"                = function: 0x12c50978
+cocos2d: [LUA-print] -             "onChangeState_"     = function: 0x12b65888
+cocos2d: [LUA-print] -             "onFire_"            = function: 0x12b658e8
+cocos2d: [LUA-print] -             "onFreeze_"          = function: 0x12b65908
+cocos2d: [LUA-print] -             "onKill_"            = function: 0x12b65948
+cocos2d: [LUA-print] -             "onLeaveFiring_"     = function: 0x12b5d268
+cocos2d: [LUA-print] -             "onReady_"           = function: 0x12b658c8
+cocos2d: [LUA-print] -             "onRelive_"          = function: 0x12b65968
+cocos2d: [LUA-print] -             "onStart_"           = function: 0x12b658a8
+cocos2d: [LUA-print] -             "onThaw_"            = function: 0x12b65928
+cocos2d: [LUA-print] -             schema = *MAX NESTING*
+cocos2d: [LUA-print] -             "setFullHp"          = function: 0x12b66088
+cocos2d: [LUA-print] -             super = *MAX NESTING*
+cocos2d: [LUA-print] -         }
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] -     "components_" = {
+cocos2d: [LUA-print] -         "components.behavior.EventProtocol" = {
+cocos2d: [LUA-print] -             class = *MAX NESTING*
+cocos2d: [LUA-print] -             depends_ = *MAX NESTING*
+cocos2d: [LUA-print] -             exportedMethods_ = *MAX NESTING*
+cocos2d: [LUA-print] -             listeners_ = *MAX NESTING*
+cocos2d: [LUA-print] -             "name_"                    = "EventProtocol"
+cocos2d: [LUA-print] -             "nextListenerHandleIndex_" = 0
+cocos2d: [LUA-print] -             target_                  = *REF*
+cocos2d: [LUA-print] -         }
+cocos2d: [LUA-print] -     }
+cocos2d: [LUA-print] -     "dispatchEvent"                   = function: 0x12cb0760
+cocos2d: [LUA-print] -     "dumpAllEventListeners"           = function: 0x12b5df48
+cocos2d: [LUA-print] -     "exp_"                            = 0
+cocos2d: [LUA-print] -     "getComponent"                    = function: 0x12c93588
+cocos2d: [LUA-print] -     "hasEventListener"                = function: 0x12b5df00
+cocos2d: [LUA-print] -     "hp_"                             = 1
+cocos2d: [LUA-print] -     "id_"                             = "enemy"
+cocos2d: [LUA-print] -     "isModelBase_"                    = true
+cocos2d: [LUA-print] -     "level_"                          = 1
+cocos2d: [LUA-print] -     "nickname_"                       = "lurenjia"
+cocos2d: [LUA-print] -     "removeAllEventListeners"         = function: 0x12c93550
+cocos2d: [LUA-print] -     "removeAllEventListenersForEvent" = function: 0x12c93508
+cocos2d: [LUA-print] -     "removeComponent"                 = function: 0x12c934a0
+cocos2d: [LUA-print] -     "removeEventListener"             = function: 0x12c534a8
+cocos2d: [LUA-print] -     "removeEventListenersByEvent"     = function: 0x12c934c0
+cocos2d: [LUA-print] -     "removeEventListenersByTag"       = function: 0x12c52648
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] actor enemy:lurenjia state change from none to idle
+cocos2d: [LUA-print] actor enemy:lurenjia start
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setupState"
+cocos2d: [LUA-print] -     2 = "isReady"
+cocos2d: [LUA-print] -     3 = "getState"
+cocos2d: [LUA-print] -     4 = "isState"
+cocos2d: [LUA-print] -     5 = "canDoEvent"
+cocos2d: [LUA-print] -     6 = "cannotDoEvent"
+cocos2d: [LUA-print] -     7 = "isFinishedState"
+cocos2d: [LUA-print] -     8 = "doEventForce"
+cocos2d: [LUA-print] -     9 = "doEvent"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setupState"
+cocos2d: [LUA-print] -     2 = "isReady"
+cocos2d: [LUA-print] -     3 = "getState"
+cocos2d: [LUA-print] -     4 = "isState"
+cocos2d: [LUA-print] -     5 = "canDoEvent"
+cocos2d: [LUA-print] -     6 = "cannotDoEvent"
+cocos2d: [LUA-print] -     7 = "isFinishedState"
+cocos2d: [LUA-print] -     8 = "doEventForce"
+cocos2d: [LUA-print] -     9 = "doEvent"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setupState"
+cocos2d: [LUA-print] -     2 = "isReady"
+cocos2d: [LUA-print] -     3 = "getState"
+cocos2d: [LUA-print] -     4 = "isState"
+cocos2d: [LUA-print] -     5 = "canDoEvent"
+cocos2d: [LUA-print] -     6 = "cannotDoEvent"
+cocos2d: [LUA-print] -     7 = "isFinishedState"
+cocos2d: [LUA-print] -     8 = "doEventForce"
+cocos2d: [LUA-print] -     9 = "doEvent"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] [INFO] ccmt calll - calll image
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1  = "getLayoutSize"
+cocos2d: [LUA-print] -     2  = "setLayoutSize"
+cocos2d: [LUA-print] -     3  = "getLayoutMinSize"
+cocos2d: [LUA-print] -     4  = "setLayoutMinSize"
+cocos2d: [LUA-print] -     5  = "getLayoutMaxSize"
+cocos2d: [LUA-print] -     6  = "setLayoutMaxSize"
+cocos2d: [LUA-print] -     7  = "getLayoutSizePolicy"
+cocos2d: [LUA-print] -     8  = "setLayoutSizePolicy"
+cocos2d: [LUA-print] -     9  = "getLayoutPadding"
+cocos2d: [LUA-print] -     10 = "setLayoutPadding"
+cocos2d: [LUA-print] -     11 = "getLayoutMargin"
+cocos2d: [LUA-print] -     12 = "setLayoutMargin"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "setLayout"
+cocos2d: [LUA-print] -     2 = "getLayout"
+cocos2d: [LUA-print] - }
+cocos2d: [LUA-print] dump from: [string "framework/cc/components/Component.lua"]:22: in function 'exportMethods_'
+cocos2d: [LUA-print] - "methods" = {
+cocos2d: [LUA-print] -     1 = "addEventListener"
+cocos2d: [LUA-print] -     2 = "dispatchEvent"
+cocos2d: [LUA-print] -     3 = "removeEventListener"
+cocos2d: [LUA-print] -     4 = "removeEventListenersByTag"
+cocos2d: [LUA-print] -     5 = "removeEventListenersByEvent"
+cocos2d: [LUA-print] -     6 = "removeAllEventListenersForEvent"
+cocos2d: [LUA-print] -     7 = "removeAllEventListeners"
+cocos2d: [LUA-print] -     8 = "hasEventListener"
+cocos2d: [LUA-print] -     9 = "dumpAllEventListeners"
+cocos2d: [LUA-print] - }

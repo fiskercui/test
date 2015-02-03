@@ -23,7 +23,11 @@ Hero.NEXT_LEVEL_EXP = 50
 function Hero:increaseEXP(exp)
     assert(not self:isDead(), string.format("hero %s:%s is dead, can't increase Exp", self:getId(), self:getNickname()))
     assert(exp > 0, "Hero:increaseEXP() - invalid exp")
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
     self.exp_ = self.exp_ + exp
     -- 简化的升级算法，每一个级别升级的经验值都是固定的
     while self.exp_ >= Hero.NEXT_LEVEL_EXP do

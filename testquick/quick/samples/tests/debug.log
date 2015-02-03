@@ -1,0 +1,119 @@
+cocos2d: Quick-Cocos2d-x C++ support ready.
+cocos2d: lua_loadChunksFromZIP() - load zip file: /Users/weihua/Documents/test/testquick/quick/lib/framework_precompiled/framework_precompiled.zip
+cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 76
+cocos2d: ------------------------------------------------
+cocos2d: LOAD LUA FILE: /Users/weihua/Documents/test/testquick/quick/samples/tests/src/main.lua
+cocos2d: ------------------------------------------------
+cocos2d: [LUA-print] ===========================================================
+cocos2d: [LUA-print]               LOAD QUICK FRAMEWORK
+cocos2d: [LUA-print] ===========================================================
+cocos2d: [LUA-print] [INFO] 
+cocos2d: [LUA-print] [INFO] # DEBUG                        = 1
+cocos2d: [LUA-print] [INFO] #
+cocos2d: [LUA-print] [INFO] # device.platform              = mac
+cocos2d: [LUA-print] [INFO] # device.model                 = unknown
+cocos2d: [LUA-print] [INFO] # device.language              = cn
+cocos2d: [LUA-print] [INFO] # device.writablePath          = /Users/weihua/Documents/test/testquick/quick/samples/tests/
+cocos2d: [LUA-print] [INFO] # device.directorySeparator    = /
+cocos2d: [LUA-print] [INFO] # device.pathSeparator         = :
+cocos2d: [LUA-print] [INFO] #
+libpng warning: iCCP: known incorrect sRGB profile
+cocos2d: [LUA-print] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+cocos2d: [LUA-print] [INFO] # CONFIG_SCREEN_WIDTH          = 640.00
+cocos2d: [LUA-print] [INFO] # CONFIG_SCREEN_HEIGHT         = 960.00
+cocos2d: [LUA-print] [INFO] # display.widthInPixels        = 640.00
+cocos2d: [LUA-print] [INFO] # display.heightInPixels       = 960.00
+cocos2d: [LUA-print] [INFO] # display.contentScaleFactor   = 1.00
+cocos2d: [LUA-print] [INFO] # display.width                = 640.00
+cocos2d: [LUA-print] [INFO] # display.height               = 960.00
+cocos2d: [LUA-print] [INFO] # display.cx                   = 320.00
+cocos2d: [LUA-print] [INFO] # display.cy                   = 480.00
+cocos2d: [LUA-print] [INFO] # display.left                 = 0.00
+cocos2d: [LUA-print] [INFO] # display.right                = 640.00
+cocos2d: [LUA-print] [INFO] # display.top                  = 960.00
+cocos2d: [LUA-print] [INFO] # display.bottom               = 0.00
+cocos2d: [LUA-print] [INFO] # display.c_left               = -320.00
+cocos2d: [LUA-print] [INFO] # display.c_right              = 320.00
+cocos2d: [LUA-print] [INFO] # display.c_top                = 480.00
+cocos2d: [LUA-print] [INFO] # display.c_bottom             = -480.00
+cocos2d: [LUA-print] [INFO] #
+cocos2d: [LUA-print] moduleNameName currentModuleName	.Registry	nil
+cocos2d: [LUA-print] classname:Registry    super typenil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.GameObject	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.Registry	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.EventProxy	nil
+cocos2d: [LUA-print] classname:EventProxy    super typenil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.components.behavior.StateMachine	framework.cc.init
+cocos2d: [LUA-print] moduleNameName currentModuleName	..Component	nil
+cocos2d: [LUA-print] classname:Component    super typenil
+cocos2d: [LUA-print] classname:StateMachine    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.components.behavior.EventProtocol	framework.cc.init
+cocos2d: [LUA-print] moduleNameName currentModuleName	..Component	nil
+cocos2d: [LUA-print] classname:EventProtocol    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.components.ui.BasicLayoutProtocol	framework.cc.init
+cocos2d: [LUA-print] moduleNameName currentModuleName	..Component	nil
+cocos2d: [LUA-print] classname:BasicLayoutProtocol    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.components.ui.LayoutProtocol	framework.cc.init
+cocos2d: [LUA-print] moduleNameName currentModuleName	.BasicLayoutProtocol	nil
+cocos2d: [LUA-print] classname:LayoutProtocol    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.components.ui.DraggableProtocol	framework.cc.init
+cocos2d: [LUA-print] moduleNameName currentModuleName	..Component	nil
+cocos2d: [LUA-print] classname:DraggableProtocol    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.mvc.init	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.AppBase	nil
+cocos2d: [LUA-print] classname:AppBase    super typenil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.ModelBase	nil
+cocos2d: [LUA-print] classname:ModelBase    super typenil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.ui.init	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIGroup	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIBoxLayout	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UILayout	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIStretch	nil
+cocos2d: [LUA-print] classname:UIStretch    super typenil
+cocos2d: [LUA-print] classname:UILayout    super typenil
+cocos2d: [LUA-print] classname:UIBoxLayout    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIImage	nil
+cocos2d: [LUA-print] classname:UIImage    super typefunction
+cocos2d: [LUA-print] classname:UIGroup    super typefunction
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIImage	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIPushButton	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIButton	nil
+cocos2d: [LUA-print] classname:UIButton    super typefunction
+cocos2d: [LUA-print] classname:UIPushButton    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UICheckBoxButton	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIButton	nil
+cocos2d: [LUA-print] classname:UICheckBoxButton    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UICheckBoxButtonGroup	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIBoxLayout	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UICheckBoxButton	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIGroup	nil
+cocos2d: [LUA-print] classname:UICheckBoxButtonGroup    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UILabel	nil
+cocos2d: [LUA-print] classname:UILabel    super typefunction
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UISlider	nil
+cocos2d: [LUA-print] classname:UISlider    super typefunction
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIBoxLayout	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIScrollView	nil
+cocos2d: [LUA-print] classname:UIScrollView    super typefunction
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIListView	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIScrollView	nil
+cocos2d: [LUA-print] classname:UIListView    super typetable
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIListViewItem	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIScrollView	nil
+cocos2d: [LUA-print] classname:UIListViewItem    super typefunction
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIPageView	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UIPageViewItem	nil
+cocos2d: [LUA-print] classname:UIPageViewItem    super typefunction
+cocos2d: [LUA-print] classname:UIPageView    super typefunction
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UILoadingBar	nil
+cocos2d: [LUA-print] classname:UILoadingBar    super typefunction
+cocos2d: [LUA-print] moduleNameName currentModuleName	.uiloader.init	nil
+cocos2d: [LUA-print] classname:uiloader    super typenil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.CCSUILoader	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.UILoaderUtilitys	nil
+cocos2d: [LUA-print] classname:CCSUILoader    super typenil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.CCSSceneLoader	nil
+cocos2d: [LUA-print] moduleNameName currentModuleName	.CCSUILoader	nil
+cocos2d: [LUA-print] classname:CCSSceneLoader    super typenil
+cocos2d: [LUA-print] classname:MainScene    super typefunction
+cocos2d: [LUA ERROR] [string "framework.cocos2dx.NodeEx"]:0: attempt to call method 'addNodeEventListener' (a nil value)

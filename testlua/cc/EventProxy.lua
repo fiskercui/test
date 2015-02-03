@@ -6,18 +6,30 @@ function EventProxy:ctor(eventDispatcher, view)
     self.handles_ = {}
 
     if view then
+<<<<<<< HEAD
         -- cc(view):addNodeEventListener(cc.NODE_EVENT, function(event)
         --     if event.name == "exit" then
         --         self:removeAllEventListeners()
         --     end
         -- end)
+=======
+        cc(view):addNodeEventListener(cc.NODE_EVENT, function(event)
+            if event.name == "exit" then
+                self:removeAllEventListeners()
+            end
+        end)
+>>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
     end
 end
 
 function EventProxy:addEventListener(eventName, listener, data)
     local handle = self.eventDispatcher_:addEventListener(eventName, listener, data)
     self.handles_[#self.handles_ + 1] = {eventName, handle}
+<<<<<<< HEAD
     return selfg
+=======
+    return self
+>>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
 end
 
 function EventProxy:removeEventListener(eventName, key1, key2)

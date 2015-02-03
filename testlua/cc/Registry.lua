@@ -5,6 +5,10 @@ Registry.classes_ = {}
 Registry.objects_ = {}
 
 function Registry.add(cls, name)
+<<<<<<< HEAD
+=======
+    print("name" .. name)
+>>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
     assert(type(cls) == "table" and cls.__cname ~= nil, "Registry.add() - invalid class")
     if not name then name = cls.__cname end
     assert(Registry.classes_[name] == nil, string.format("Registry.add() - class \"%s\" already exists", tostring(name)))

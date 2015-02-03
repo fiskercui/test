@@ -2,11 +2,17 @@
 local Hero = import("..models.Hero")
 local HeroView = import("..views.HeroView")
 
+<<<<<<< HEAD
 -- local PlayDuelController = class("PlayDuelController", function()
 --     return display.newNode()
 -- end)
 
 local PlayDuelController = class("PlayDuelController")
+=======
+local PlayDuelController = class("PlayDuelController", function()
+    return display.newNode()
+end)
+>>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
 
 function PlayDuelController:ctor()
     if not app:isObjectExists("player") then
