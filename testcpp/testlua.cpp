@@ -511,6 +511,89 @@ void testCppObjectLua()
 }
 
 
+#define LUA_BRIDGE_REGISTRY_FUNCTION    "lua_bridge_function_id"        // table[function] = id
+#define LUA_BRIDGE_REGISTRY_RETAIN      "lua_bridge_function_id_retain" // table[id] = retain count
+
+
+int LuaBridge::retainLuaFunction(lua_State *L, int functionIndex, int *retainCountReturn)
+{
+    /* L: f ... */
+    lua_pushstring(L, LUA_BRIDGE_REGISTRY_FUNCTION);            /* L: f ... key */
+    lua_rawget(L, LUA_REGISTRYINDEX);                           /* L: f ... f_id */
+    if (!lua_istable(L, -1))
+    {
+        lua_pop(L, 1);
+        lua_newtable(L);
+        lua_pushstring(L, LUA_BRIDGE_REGISTRY_FUNCTION);
+        lua_pushvalue(L, -2);
+        lua_rawset(L, LUA_REGISTRYINDEX);
+    }
+    
+    lua_pushstring(L, LUA_BRIDGE_REGISTRY_RETAIN);              /* L: f ... f_id key */
+    lua_rawget(L, LUA_REGISTRYINDEX);                           /* L: f ... f_id id_r */
+    if (!lua_istable(L, -1))
+    {
+        lua_pop(L, 1);
+        lua_newtable(L);
+        lua_pushstring(L, LUA_BRIDGE_REGISTRY_RETAIN);
+        lua_pushvalue(L, -2);
+        lua_rawset(L, LUA_REGISTRYINDEX);
+    }
+    
+    // get function id
+    lua_pushvalue(L, functionIndex - 2);                        /* L: f ... f_id id_r f */
+    lua_rawget(L, -3);                                          /* L: f ... f_id id_r id */
+    
+    int functionId;
+    if (lua_type(L, -1) != LUA_TNUMBER)
+    {
+        // first retain, create new id
+        lua_pop(L, 1);                                          /* L: f ... f_id id_r */
+        s_newFunctionId++;
+        functionId = s_newFunctionId;
+        
+        lua_pushvalue(L, functionIndex - 2);                    /* L: f ... f_id id_r f */
+        lua_pushinteger(L, functionId);                         /* L: f ... f_id id_r f id */
+        lua_rawset(L, -4);                        /* f_id[f] = id, L: f ... f_id id_r */
+        lua_pushinteger(L, functionId);                         /* L: f ... f_id id_r id */
+    }
+    else
+    {
+        functionId = lua_tonumber(L, -1);
+    }
+    
+    // get function retain
+    lua_pushvalue(L, -1);                                       /* L: f ... f_id id_r id id */
+    lua_rawget(L, -3);                                          /* L: f ... f_id id_r id r */
+    int retainCount = 1;
+    if (lua_type(L, -1) != LUA_TNUMBER)
+    {
+        // first retain, set retain count = 1
+        lua_pop(L, 1);
+        lua_pushinteger(L, retainCount);
+    }
+    else
+    {
+        // add retain count
+        retainCount = lua_tonumber(L, -1);
+        retainCount++;
+        lua_pop(L, 1);
+        lua_pushinteger(L, retainCount);
+    }
+    
+    lua_rawset(L, -3);                            /* id_r[id] = r, L: f ... f_id id_r */
+    lua_pop(L, 2);                                              /* L: f ... */
+    
+    if (retainCountReturn) *retainCountReturn = retainCount;
+    return functionId;
+}
+
+void testRetainCount()
+{
+  
+}
+
+
 
 int main (void) 
 {
