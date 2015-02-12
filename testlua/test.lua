@@ -1,30 +1,23 @@
 require('base.function')
 require('base.class')
 require('base.json')
-<<<<<<< HEAD
-
 
 -- require('pack')
-=======
 require('base.debug')-- require('pack')
 require('base.string')
->>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
 
 local tests = {
 	-- "testdebug",
-	-- "testmetatable",
+	"testmetatable",
 	-- "testutf8",
 	-- "testserialize",
 	-- "testenv",
 	-- "testtable",
 	-- "testimport",
-<<<<<<< HEAD
 	-- "testfunction",
-	"testmvc",
-=======
-	"testcomponent",
+	-- "testmvc",
+	-- "testcomponent",
 	-- "testimport",
->>>>>>> f81383bbd9d8a90c6ced933f4425d916b722237d
 	-- "testfunction",
 	-- "teststring",
 	-- "testjson"

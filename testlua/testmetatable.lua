@@ -41,6 +41,18 @@ t.testIndex =  function (...)
 	print(w.wangbin)
 end
 
+function t:testCall()
+	print("test call")
+	local ev = {}
+	function  ev.__call()
+		print "called from ev"
+	end
+
+	local abc = {}
+	setmetatable(abc, ev)
+	abc()
+end
+
 function t:test(...)
 	print("metatable test")
 
@@ -55,6 +67,8 @@ function t:test(...)
 	for key,value in pairs( __mt.__index) do
 		print("index", key, value)
 	end
+
+	t.testCall()
 end
 
 
