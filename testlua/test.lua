@@ -8,7 +8,7 @@ require('base.string')
 
 local tests = {
 	-- "testdebug",
-	"testmetatable",
+	-- "testmetatable",
 	-- "testutf8",
 	-- "testserialize",
 	-- "testenv",
@@ -20,8 +20,9 @@ local tests = {
 	-- "testimport",
 	-- "testfunction",
 	-- "teststring",
-	-- "testjson"
-	-- "testbytearray"
+	-- "testjson",
+	-- "testbytearray",
+	"testcoroutine",
 }
 
 -- local a = {1,2,3}
