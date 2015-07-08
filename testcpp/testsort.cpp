@@ -49,6 +49,54 @@ void quick_sort(int s[], int l, int r)
 	}
 }
 
+
+//归并算法
+void mergeArray(int a[], int first,int last, int temp[])
+{
+	int mid = (first + last) / 2;
+	int i = first, j = mid + 1;
+	int m = mid, n = last;
+	int k = 0;
+
+	while(i <= m && j <<n)
+	{
+		if(a[i] <= a[j])
+			temp[k++] = a[i++];
+		else
+			temp[k++] = a[j++];
+	}
+
+	while( i <= m)
+		temp[k++] = a[i++];
+	while( j <= n)
+		temp[k++] = a[j++];
+	for (int i = 0; i < k; ++i)
+	{
+		a[first + i] = temp[i];
+	}
+}
+
+
+void mergeSort(int a[], int first, int last, int temp[])
+{
+	if (first< last)
+	{
+		mergeSort(a,first, (first+last)/2, temp);
+		mergeSort(a,(first + last)/2 + 1, last, temp);
+		mergeArray(a, first, last, temp);
+	}
+}
+
+void testMergeSort(int a[], int n)
+{
+	int *p = new int[n];
+	if(p == NULL)
+		return ;
+	mergeSort(a, 0, n-1, p);
+	return ;
+}
+
+
 int main(int argc, char const *argv[])
 {
 	/* code */
@@ -63,7 +111,9 @@ int main(int argc, char const *argv[])
 	}
 	printf("\n");
 	// quick_sort(array, 0, 9);
-	insert_sort(array, 10);
+	// insert_sort(array, 10);
+	testMergeSort(array, 10);
+
 	printf("after sort\n");
 	for (int i = 0; i < 10; ++i)
 	{
