@@ -11,7 +11,8 @@ namespace testcommon
         testevent,  //此逗号可以省略
         testclass,
         testattribute,
-        testIndex
+        testIndex,
+        testCoroutine,
     };
 
 
@@ -25,6 +26,7 @@ namespace testcommon
             { TestType.testclass, "TestClass"},
             { TestType.testattribute ,"AttributeTest"},
             { TestType.testIndex ,"TestIndex"},
+            { TestType.testCoroutine, "TestCoroutine"}
         };
 
         static void startTest(TestType type)
@@ -55,7 +57,8 @@ namespace testcommon
 
             //startTest(TestType.testattribute);
             //startTest(TestType.testreflection);
-            startTest(TestType.testIndex);
+            //startTest(TestType.testIndex);
+            startTest(TestType.testCoroutine);
             //startTest(TestType.testevent);
         }
     }
